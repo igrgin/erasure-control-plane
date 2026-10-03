@@ -1,23 +1,21 @@
-# GitHub-ready backlog
+# Published GitHub backlog
 
-The backlog contains ten epic tasks and 42 proposed implementation issues for one milestone, `v0.1 end-to-end demonstration`. [issues.json](issues.json) is the machine-readable index; [the development plan](../docs/development-plan.md) gives epic capabilities, start gates, and concurrent scheduling.
+The accepted first-release backlog has ten epic tasks and 42 child issues, grouped under the `v0.1 end-to-end demonstration` milestone in [igrgin/erasure-control-plane](https://github.com/igrgin/erasure-control-plane/issues). Repository preparation is tracked separately as issue #1.
 
-Each EPIC ID identifies a parent task and each ERA ID identifies a child implementation issue. These local IDs are not GitHub issue numbers. The [epic bodies](epics/EPIC-01.md) describe coupled capabilities and include child task lists. The issue Markdown files are ready to use as issue bodies. Preserve these IDs when publishing so dependencies and requirement coverage remain traceable.
+[issues.json](issues.json) defines the plan's capabilities and dependencies. [github-map.json](github-map.json) maps every ERA/EPIC ID to its actual GitHub issue number, URL, native blockers, and branch name. The [development plan](../docs/development-plan.md) explains concurrent readiness and epic acceptance.
 
-## Later repository and issue creation
+## Relationships and issue types
 
-1. Review and accept the specification and plan revisions recorded in [candidate.json](candidate.json). Revise them first if needed.
-2. Create the Git repository and GitHub remote when authorized. Commit README, CONTEXT, docs, planning, and scripts; `.pathfinder/` remains ignored local execution state.
-3. Create the milestone and labels `type:epic`, `type:implementation`, and `epic:epic-01` through `epic:epic-10`.
-4. Create ten parent epic tasks from `epics` and 42 child implementation issues from `issues` in the manifest. Use each body file and `[EPIC-xx] Title` or `[ERA-xxx] Title`. GitHub CLI supports creating issues from a body file. [GitHub issue creation](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue).
-5. Save a local epic/issue ID → GitHub issue URL/number mapping in a committed tracking file. After all tasks exist, update dependency references and parent child-task lists with actual links. Replace local documentation links with committed repository URLs. The parent task list is the required portable grouping; a native parent/sub-issue relationship may also be added when available. Do not assume GitHub numbers will match ERA IDs.
-6. Check existing tasks by EPIC/ERA ID before retrying publication so an interrupted import cannot create duplicates. Verify labels, milestone, bodies, and mappings after creation.
-7. Optionally create a GitHub Project with Backlog, Ready, In progress, Review, and Done views. Group by epic and mark a child issue Ready only after its epic start gates, issue dependencies, design inputs, and file claims are satisfied. Track blocked children without falsely marking the entire epic blocked.
+GitHub parent/sub-issue links connect every child to its epic. Native blocked-by links encode direct issue prerequisites and inherited epic start gates. Epics require their entry gates, while child completion and the combined demonstration determine final epic acceptance. Use the live readiness helper in [the Git workflow](../docs/git-workflow.md) before implementation.
 
-This step is deliberately future work. No repository or issue has been created, and the plan includes no tool that silently publishes it. A provider-specific deployment target and credentials are also selected at execution time.
+The four type labels are `bug`, `spike`, `implement`, and `epic`. ERA-041 hosting feasibility is a spike. The other planned children are implementation tasks. Each issue has exactly one type label. Extra epic-group labels are unnecessary because native parent relationships provide the grouping.
 
-## Local verification
+Published bodies link to actual GitHub issues and repository documentation. The Markdown body files remain the accepted planning sources; metadata in the manifest describes the live publication. Preserve ERA/EPIC IDs when revising tasks so acceptance and requirement links stay traceable.
 
-Run `python3 scripts/validate_plan.py` from the project root. It verifies issue files, required issue sections, unique IDs, issue and epic dependency cycles, child membership, start prerequisites, concurrent readiness examples, local document links, requirement coverage, and the candidate's file hashes. It does not prove implementation correctness or owner acceptance.
+## Maintenance and verification
 
-Planning requirements checked by that command are PLAN-1, complete epic/child-issue records; PLAN-2, consistent dependency and requirement mapping; and PLAN-3, reviewable documents bound to a candidate revision.
+`python3 scripts/publish_backlog.py verify` checks remote titles, bodies, labels, milestones, parents, and native blockers against the manifest/map. The explicitly invoked `publish` action reconciles approved backlog changes idempotently; its `branches` action creates missing issue branches from current main while preserving existing branches. External mutations still require authorization for the requested change.
+
+`python3 scripts/validate_plan.py` checks local artifact hashes, issue/epic graph consistency, start prerequisites, concurrency examples, links, and requirement coverage. `python3 -m unittest discover -s scripts -p 'test_*.py'` verifies the GitHub policy's important failure cases. These checks do not establish application correctness or epic UAT.
+
+The original accepted planning revision is preserved in [accepted-plan.json](accepted-plan.json) and initial commit `7676b01`. [candidate.json](candidate.json) binds the repository preparation files derived from that approved plan. PLAN-1 covers complete epic/child records; PLAN-2 covers consistent prerequisites and requirement links; PLAN-3 covers reviewable candidate artifacts.

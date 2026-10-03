@@ -2,7 +2,7 @@
 
 Erasure will be an internal business-account cleanup system for one operating company. Its customer accounts share one control plane and are the tenants whose data is separated. Employees record externally received cleanup requests, source owners approve operations, and adapters execute them. The first release demonstrates that complete workflow and a small deployable version of the architecture used at larger scale.
 
-The plan uses ten epics containing 42 implementation issues. An epic describes a cohesive application capability and groups the coupled issues needed to deliver it. Each epic ends in an observable employee workflow. Backend, frontend, adapters, persistence, authorization, audit, and tests are added together as each behavior needs them. The issue files are prepared for GitHub; no GitHub resources have been created.
+The plan uses ten epics containing 42 implementation issues. An epic describes a cohesive application capability and groups the coupled issues needed to deliver it. Each epic ends in an observable employee workflow. Backend, frontend, adapters, persistence, authorization, audit, and tests are added together as each behavior needs them. The issues are published on GitHub with native parent/dependency links; planning/github-map.json records their actual numbers and dedicated branches.
 
 ## Architecture decision
 
@@ -124,7 +124,7 @@ Each issue and epic has one project owner as delivery/review authority. Use one 
 
 Stop an issue on an unresolved domain decision, incompatible adapter capability, unavailable required environment, or failed acceptance after the finite repair budget. Never bypass a blocker by marking a destructive operation complete. Reopen affected acceptance if a proposal, contract, requirement, or candidate changes.
 
-The present Pathfinder adoption covers planning artifacts only and is development-only. Future implementation extends its scope/checks to actual source paths and executable application checks. The owner accepts the exact specification and plan revisions before implementation starts. Deployment acceptance requires actual deployment and recovery evidence; local documents cannot satisfy it.
+The present Pathfinder adoption covers planning artifacts only and is development-only. Future implementation extends its scope/checks to actual source paths and executable application checks. The owner accepted planning revision be081ef4cee596a5ae903f184eec1a87cfdb13d9efd5a98db9dffa174a9a95ae in this conversation. Each issue still requires its live prerequisites and acceptance checks. Deployment acceptance requires actual deployment and recovery evidence; local documents cannot satisfy it.
 
 No deadline is imposed. The first release includes every epic, including deployment and scale evidence. More adapter types, customer self-service, automated legal decisions, and multiple operating companies are later product work.
 

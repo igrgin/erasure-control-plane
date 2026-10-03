@@ -56,7 +56,7 @@ def validate():
         assert len(epic['issues']) >= 2, f'incomplete epic {eid}'
         body = (ROOT / epic['body_file']).read_text()
         assert body.startswith(f"# {eid}: {epic['title']}"), f'epic title mismatch {eid}'
-        assert 'type:epic' in epic['labels'], f'missing epic label {eid}'
+        assert epic['labels'] == ['epic'], f'missing epic label {eid}'
         for section in ['## Application capability', '## Why these issues belong together', '## Start prerequisites and external blockers', '## Coupled child issues', '## Integration boundaries', '## Epic acceptance']:
             assert section in body, f'missing {section} in {eid}'
         for ident in epic['issues']:
@@ -85,7 +85,7 @@ def validate():
         body = path.read_text()
         assert body.startswith(f"# {ident}: {issue['title']}"), f'title mismatch {ident}'
         assert f"Epic: [{issue['epic']}](../epics/{issue['epic']}.md)." in body, f'parent link missing {ident}'
-        assert f"epic:{issue['epic'].lower()}" in issue['labels'], f'parent label missing {ident}'
+        assert len(issue["labels"]) == 1 and issue["labels"][0] in {"bug", "spike", "implement"}, f"invalid issue type {ident}"
         for section in ['## Outcome', '## Requirements and dependencies', '## Intended implementation ownership', '## Acceptance criteria', '## Verification']:
             assert section in body, f'missing {section} in {ident}'
         assert body.count('- [ ] ') >= 3, f'insufficient acceptance criteria {ident}'
@@ -126,7 +126,7 @@ def validate():
     spec = (ROOT / 'docs/specification.md').read_text()
     for req in requirements:
         assert f'| {req} |' in spec, f'missing requirement definition {req}'
-    markdown = [ROOT / 'README.md', ROOT / 'CONTEXT.md', *sorted((ROOT / 'docs').rglob('*.md')), *sorted((ROOT / 'planning').rglob('*.md'))]
+    markdown = [ROOT / 'README.md', ROOT / 'CONTEXT.md', ROOT / 'AGENTS.md', *sorted((ROOT / 'docs').rglob('*.md')), *sorted((ROOT / 'planning').rglob('*.md'))]
     for path in markdown:
         for target in re.findall(r'\[[^\]]*\]\(([^)]+)\)', path.read_text()):
             if target.startswith(('https://', 'http://', '#')):
@@ -134,8 +134,8 @@ def validate():
             target = target.split('#', 1)[0]
             assert (path.parent / target).resolve().exists(), f'broken link {path}: {target}'
     candidate = json.loads((ROOT / 'planning/candidate.json').read_text())
-    actual_files = {'.gitignore', 'README.md', 'CONTEXT.md'}
-    actual_files.update(str(p.relative_to(ROOT)) for base in ('docs', 'planning', 'scripts') for p in (ROOT / base).rglob('*') if p.is_file() and p.name != 'candidate.json' and '__pycache__' not in p.parts)
+    actual_files = {'.gitignore', 'README.md', 'CONTEXT.md', 'AGENTS.md'}
+    actual_files.update(str(p.relative_to(ROOT)) for base in ('docs', 'planning', 'scripts', '.github') for p in (ROOT / base).rglob('*') if p.is_file() and p.name != 'candidate.json' and '__pycache__' not in p.parts)
     assert set(candidate['files']) == actual_files, 'candidate inventory omits or retains an artifact'
     for name, expected_hash in candidate['files'].items():
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected_hash, f'candidate file changed: {name}'

@@ -2,7 +2,7 @@
   "version": 3,
   "product": "Erasure",
   "release": "v0.1 end-to-end demonstration",
-  "issue_status": "proposed; not published",
+  "issue_status": "published on GitHub; implementation pending",
   "epics": [
     {
       "id": "EPIC-01",
@@ -16,8 +16,7 @@
       "body_file": "planning/epics/EPIC-01.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-01"
+        "epic"
       ],
       "depends_on_epics": [],
       "entry_issue_dependencies": [
@@ -41,8 +40,7 @@
       "body_file": "planning/epics/EPIC-02.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-02"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -66,8 +64,7 @@
       "body_file": "planning/epics/EPIC-03.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-03"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -95,8 +92,7 @@
       "body_file": "planning/epics/EPIC-04.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-04"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -123,8 +119,7 @@
       "body_file": "planning/epics/EPIC-05.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-05"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -150,8 +145,7 @@
       "body_file": "planning/epics/EPIC-06.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-06"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -181,8 +175,7 @@
       "body_file": "planning/epics/EPIC-07.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-07"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -210,8 +203,7 @@
       "body_file": "planning/epics/EPIC-08.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-08"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -241,8 +233,7 @@
       "body_file": "planning/epics/EPIC-09.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-09"
+        "epic"
       ],
       "depends_on_epics": [
         "EPIC-01"
@@ -279,8 +270,7 @@
       "body_file": "planning/epics/EPIC-10.md",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:epic",
-        "epic:epic-10"
+        "epic"
       ],
       "depends_on_epics": [],
       "entry_issue_dependencies": [],
@@ -302,8 +292,7 @@
       "title": "Bootstrap employee login and isolated business accounts",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-01"
+        "implement"
       ],
       "requirements": [
         "REQ-01",
@@ -320,8 +309,7 @@
       "title": "Request a fresh proposal from one independent adapter",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-01"
+        "implement"
       ],
       "requirements": [
         "REQ-04",
@@ -338,8 +326,7 @@
       "title": "Approve and execute the first proposal with durable evidence",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-01"
+        "implement"
       ],
       "requirements": [
         "REQ-06",
@@ -358,8 +345,7 @@
       "title": "Make the thin workflow reproducible in CI and a local walkthrough",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-01"
+        "implement"
       ],
       "requirements": [
         "REQ-07",
@@ -377,8 +363,7 @@
       "title": "Register sources and bind owners and adapter principals",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-02"
+        "implement"
       ],
       "requirements": [
         "REQ-02",
@@ -395,8 +380,7 @@
       "title": "Publish versioned time, retention, and account-mapping capabilities",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-02"
+        "implement"
       ],
       "requirements": [
         "REQ-01",
@@ -414,8 +398,7 @@
       "title": "Ingest tenant inventory with revisions, completeness, and resync",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-02"
+        "implement"
       ],
       "requirements": [
         "REQ-03",
@@ -432,8 +415,7 @@
       "title": "Show business-account inventory and source coverage",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-02"
+        "implement"
       ],
       "requirements": [
         "REQ-02",
@@ -450,8 +432,7 @@
       "title": "Capture immutable request scope and precise time boundaries",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-03"
+        "implement"
       ],
       "requirements": [
         "REQ-04",
@@ -468,8 +449,7 @@
       "title": "Generate source-specific proposals with retention and selection preconditions",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-03"
+        "implement"
       ],
       "requirements": [
         "REQ-05",
@@ -487,8 +467,7 @@
       "title": "Build a second adapter with different time and cleanup behavior",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-03"
+        "implement"
       ],
       "requirements": [
         "REQ-03",
@@ -508,8 +487,7 @@
       "title": "Review a multi-source request and its time/retention differences",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-03"
+        "implement"
       ],
       "requirements": [
         "REQ-03",
@@ -530,8 +508,7 @@
       "title": "Enforce source-owner authority and concurrent decisions",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-04"
+        "implement"
       ],
       "requirements": [
         "REQ-06",
@@ -548,8 +525,7 @@
       "title": "Invalidate stale approval and revalidate before source effects",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-04"
+        "implement"
       ],
       "requirements": [
         "REQ-05",
@@ -568,8 +544,7 @@
       "title": "Provide an owner review queue with explicit decisions and reasons",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-04"
+        "implement"
       ],
       "requirements": [
         "REQ-05",
@@ -587,8 +562,7 @@
       "title": "Serialize overlapping cleanup and define cancellation races",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-04"
+        "implement"
       ],
       "requirements": [
         "REQ-04",
@@ -607,8 +581,7 @@
       "title": "Run durable leased workers with bounded source and tenant concurrency",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-05"
+        "implement"
       ],
       "requirements": [
         "REQ-08",
@@ -625,8 +598,7 @@
       "title": "Complete adapter deduplication and checkpoint recovery",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-05"
+        "implement"
       ],
       "requirements": [
         "REQ-07",
@@ -644,8 +616,7 @@
       "title": "Expose partial, failed, and unknown execution outcomes",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-05"
+        "implement"
       ],
       "requirements": [
         "REQ-08",
@@ -664,8 +635,7 @@
       "title": "Prove recovery with a deterministic cross-process failure harness",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-05"
+        "implement"
       ],
       "requirements": [
         "REQ-08",
@@ -684,8 +654,7 @@
       "title": "Define per-source disposition and request closure transitions",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-06"
+        "implement"
       ],
       "requirements": [
         "REQ-10",
@@ -702,8 +671,7 @@
       "title": "Manage retention holds, blockers, and source-owner intervention",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-06"
+        "implement"
       ],
       "requirements": [
         "REQ-09",
@@ -722,8 +690,7 @@
       "title": "Close requests with explicit coverage and acknowledged exceptions",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-06"
+        "implement"
       ],
       "requirements": [
         "REQ-04",
@@ -743,8 +710,7 @@
       "title": "Demonstrate complete customer-request scenarios",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-06"
+        "implement"
       ],
       "requirements": [
         "REQ-04",
@@ -767,8 +733,7 @@
       "title": "Harden attributable audit events and evidence retention",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-07"
+        "implement"
       ],
       "requirements": [
         "REQ-11",
@@ -785,8 +750,7 @@
       "title": "Deliver tenant-authorized audit timeline and export",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-07"
+        "implement"
       ],
       "requirements": [
         "REQ-11",
@@ -803,8 +767,7 @@
       "title": "Show operational health and actionable workflow metrics",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-07"
+        "implement"
       ],
       "requirements": [
         "REQ-03",
@@ -823,8 +786,7 @@
       "title": "Exercise operational interventions and data-minimization policies",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-07"
+        "implement"
       ],
       "requirements": [
         "REQ-09",
@@ -845,8 +807,7 @@
       "title": "Package the application topology for a clean HTTPS deployment",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-08"
+        "implement"
       ],
       "requirements": [
         "REQ-13"
@@ -862,8 +823,7 @@
       "title": "Build immutable images and an approved promotion pipeline",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-08"
+        "implement"
       ],
       "requirements": [
         "REQ-12",
@@ -880,8 +840,7 @@
       "title": "Prove safe backup, restore, credential rotation, and rollback",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-08"
+        "implement"
       ],
       "requirements": [
         "REQ-08",
@@ -899,8 +858,7 @@
       "title": "Accept the deployed end-to-end release candidate",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-08"
+        "implement"
       ],
       "requirements": [
         "REQ-01",
@@ -934,8 +892,7 @@
       "title": "Generate repeatable inventory and workflow scale workloads",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-09"
+        "implement"
       ],
       "requirements": [
         "REQ-03",
@@ -953,8 +910,7 @@
       "title": "Prove isolation and recovery with multiple API and worker instances",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-09"
+        "implement"
       ],
       "requirements": [
         "REQ-08",
@@ -974,8 +930,7 @@
       "title": "Measure capacity, fairness, and failure isolation",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-09"
+        "implement"
       ],
       "requirements": [
         "REQ-03",
@@ -997,8 +952,7 @@
       "title": "Publish the architecture portfolio and evidence-based scaling handoff",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-09"
+        "implement"
       ],
       "requirements": [
         "REQ-13",
@@ -1019,8 +973,7 @@
       "title": "Define the demo source catalog, business story, and scenario blueprint",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-10"
+        "implement"
       ],
       "requirements": [
         "REQ-13",
@@ -1035,8 +988,7 @@
       "title": "Create the three-store environment and deterministic synthetic fixtures",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-10"
+        "implement"
       ],
       "requirements": [
         "REQ-01",
@@ -1056,8 +1008,7 @@
       "title": "Implement the Redis cache adapter with safe expiry and recreation handling",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-10"
+        "implement"
       ],
       "requirements": [
         "REQ-03",
@@ -1080,8 +1031,7 @@
       "title": "Build the guided three-source demo and repeatable scenario reset",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-10"
+        "implement"
       ],
       "requirements": [
         "REQ-07",
@@ -1104,8 +1054,7 @@
       "title": "Assess demo hosting, recurring cost, and resource viability",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-10"
+        "spike"
       ],
       "requirements": [
         "REQ-13",
@@ -1122,8 +1071,7 @@
       "title": "Launch and accept a publicly visible synthetic demo",
       "milestone": "v0.1 end-to-end demonstration",
       "labels": [
-        "type:implementation",
-        "epic:epic-10"
+        "implement"
       ],
       "requirements": [
         "REQ-12",

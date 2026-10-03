@@ -1,0 +1,620 @@
+{
+  "version": 1,
+  "repo": "igrgin/erasure-control-plane",
+  "setup_issue": {
+    "number": 1,
+    "url": "https://github.com/igrgin/erasure-control-plane/issues/1"
+  },
+  "items": {
+    "EPIC-01": {
+      "number": 2,
+      "id": 5693592911,
+      "node_id": "I_kwDOU6nJaM8AAAABU11VTw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/2",
+      "branch": "2-safe-end-to-end-foundation",
+      "blockers": [
+        "ERA-037"
+      ]
+    },
+    "EPIC-02": {
+      "number": 3,
+      "id": 5693593120,
+      "node_id": "I_kwDOU6nJaM8AAAABU11WIA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/3",
+      "branch": "3-registered-source-coverage-and-account-inventory",
+      "blockers": [
+        "EPIC-01"
+      ]
+    },
+    "EPIC-03": {
+      "number": 4,
+      "id": 5693593314,
+      "node_id": "I_kwDOU6nJaM8AAAABU11W4g",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/4",
+      "branch": "4-precise-scope-across-heterogeneous-sources",
+      "blockers": [
+        "EPIC-01",
+        "ERA-006"
+      ]
+    },
+    "EPIC-04": {
+      "number": 5,
+      "id": 5693593683,
+      "node_id": "I_kwDOU6nJaM8AAAABU11YUw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/5",
+      "branch": "5-accountable-owner-decisions",
+      "blockers": [
+        "EPIC-01",
+        "ERA-005"
+      ]
+    },
+    "EPIC-05": {
+      "number": 6,
+      "id": 5693593893,
+      "node_id": "I_kwDOU6nJaM8AAAABU11ZJQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/6",
+      "branch": "6-reliable-execution-and-recovery",
+      "blockers": [
+        "EPIC-01"
+      ]
+    },
+    "EPIC-06": {
+      "number": 7,
+      "id": 5693594099,
+      "node_id": "I_kwDOU6nJaM8AAAABU11Z8w",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/7",
+      "branch": "7-blockers-and-complete-case-disposition",
+      "blockers": [
+        "EPIC-01"
+      ]
+    },
+    "EPIC-07": {
+      "number": 8,
+      "id": 5693594314,
+      "node_id": "I_kwDOU6nJaM8AAAABU11ayg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/8",
+      "branch": "8-audit-evidence-and-operational-visibility",
+      "blockers": [
+        "EPIC-01"
+      ]
+    },
+    "EPIC-08": {
+      "number": 9,
+      "id": 5693594660,
+      "node_id": "I_kwDOU6nJaM8AAAABU11cJA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/9",
+      "branch": "9-deployment-and-release-operations",
+      "blockers": [
+        "EPIC-01"
+      ]
+    },
+    "EPIC-09": {
+      "number": 10,
+      "id": 5693594883,
+      "node_id": "I_kwDOU6nJaM8AAAABU11dAw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/10",
+      "branch": "10-measured-scaling-and-architecture-handoff",
+      "blockers": [
+        "EPIC-01",
+        "ERA-007"
+      ]
+    },
+    "EPIC-10": {
+      "number": 11,
+      "id": 5693595084,
+      "node_id": "I_kwDOU6nJaM8AAAABU11dzA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/11",
+      "branch": "11-synthetic-demo-environment-and-public-visibility",
+      "blockers": []
+    },
+    "ERA-001": {
+      "number": 12,
+      "id": 5693595298,
+      "node_id": "I_kwDOU6nJaM8AAAABU11eog",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/12",
+      "branch": "12-bootstrap-employee-login-and-isolated-business-accounts",
+      "blockers": [
+        "ERA-037"
+      ]
+    },
+    "ERA-002": {
+      "number": 13,
+      "id": 5693595489,
+      "node_id": "I_kwDOU6nJaM8AAAABU11fYQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/13",
+      "branch": "13-request-a-fresh-proposal-from-one-independent-adapter",
+      "blockers": [
+        "ERA-001",
+        "ERA-037"
+      ]
+    },
+    "ERA-003": {
+      "number": 14,
+      "id": 5693595838,
+      "node_id": "I_kwDOU6nJaM8AAAABU11gvg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/14",
+      "branch": "14-approve-and-execute-the-first-proposal-with-durable-evidence",
+      "blockers": [
+        "ERA-002",
+        "ERA-037"
+      ]
+    },
+    "ERA-004": {
+      "number": 15,
+      "id": 5693596039,
+      "node_id": "I_kwDOU6nJaM8AAAABU11hhw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/15",
+      "branch": "15-make-the-thin-workflow-reproducible-in-ci-and-a-local-walkthrough",
+      "blockers": [
+        "ERA-003",
+        "ERA-037"
+      ]
+    },
+    "ERA-005": {
+      "number": 16,
+      "id": 5693596219,
+      "node_id": "I_kwDOU6nJaM8AAAABU11iOw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/16",
+      "branch": "16-register-sources-and-bind-owners-and-adapter-principals",
+      "blockers": [
+        "EPIC-01",
+        "ERA-004"
+      ]
+    },
+    "ERA-006": {
+      "number": 17,
+      "id": 5693596419,
+      "node_id": "I_kwDOU6nJaM8AAAABU11jAw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/17",
+      "branch": "17-publish-versioned-time-retention-and-account-mapping-capabilities",
+      "blockers": [
+        "EPIC-01",
+        "ERA-005"
+      ]
+    },
+    "ERA-007": {
+      "number": 18,
+      "id": 5693596815,
+      "node_id": "I_kwDOU6nJaM8AAAABU11kjw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/18",
+      "branch": "18-ingest-tenant-inventory-with-revisions-completeness-and-resync",
+      "blockers": [
+        "EPIC-01",
+        "ERA-006"
+      ]
+    },
+    "ERA-008": {
+      "number": 19,
+      "id": 5693597048,
+      "node_id": "I_kwDOU6nJaM8AAAABU11leA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/19",
+      "branch": "19-show-business-account-inventory-and-source-coverage",
+      "blockers": [
+        "EPIC-01",
+        "ERA-007"
+      ]
+    },
+    "ERA-009": {
+      "number": 20,
+      "id": 5693597232,
+      "node_id": "I_kwDOU6nJaM8AAAABU11mMA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/20",
+      "branch": "20-capture-immutable-request-scope-and-precise-time-boundaries",
+      "blockers": [
+        "EPIC-01",
+        "ERA-006"
+      ]
+    },
+    "ERA-010": {
+      "number": 21,
+      "id": 5693597450,
+      "node_id": "I_kwDOU6nJaM8AAAABU11nCg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/21",
+      "branch": "21-generate-source-specific-proposals-with-retention-and-selection-preconditions",
+      "blockers": [
+        "EPIC-01",
+        "ERA-006",
+        "ERA-009"
+      ]
+    },
+    "ERA-011": {
+      "number": 22,
+      "id": 5693597786,
+      "node_id": "I_kwDOU6nJaM8AAAABU11oWg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/22",
+      "branch": "22-build-a-second-adapter-with-different-time-and-cleanup-behavior",
+      "blockers": [
+        "EPIC-01",
+        "ERA-006",
+        "ERA-038"
+      ]
+    },
+    "ERA-012": {
+      "number": 23,
+      "id": 5693598028,
+      "node_id": "I_kwDOU6nJaM8AAAABU11pTA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/23",
+      "branch": "23-review-a-multi-source-request-and-its-time-retention-differences",
+      "blockers": [
+        "EPIC-01",
+        "ERA-006",
+        "ERA-008",
+        "ERA-010",
+        "ERA-011"
+      ]
+    },
+    "ERA-013": {
+      "number": 24,
+      "id": 5693598227,
+      "node_id": "I_kwDOU6nJaM8AAAABU11qEw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/24",
+      "branch": "24-enforce-source-owner-authority-and-concurrent-decisions",
+      "blockers": [
+        "EPIC-01",
+        "ERA-005"
+      ]
+    },
+    "ERA-014": {
+      "number": 25,
+      "id": 5693598420,
+      "node_id": "I_kwDOU6nJaM8AAAABU11q1A",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/25",
+      "branch": "25-invalidate-stale-approval-and-revalidate-before-source-effects",
+      "blockers": [
+        "EPIC-01",
+        "ERA-005",
+        "ERA-010",
+        "ERA-013"
+      ]
+    },
+    "ERA-015": {
+      "number": 26,
+      "id": 5693598710,
+      "node_id": "I_kwDOU6nJaM8AAAABU11r9g",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/26",
+      "branch": "26-provide-an-owner-review-queue-with-explicit-decisions-and-reasons",
+      "blockers": [
+        "EPIC-01",
+        "ERA-005",
+        "ERA-013"
+      ]
+    },
+    "ERA-016": {
+      "number": 27,
+      "id": 5693598961,
+      "node_id": "I_kwDOU6nJaM8AAAABU11s8Q",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/27",
+      "branch": "27-serialize-overlapping-cleanup-and-define-cancellation-races",
+      "blockers": [
+        "EPIC-01",
+        "ERA-005",
+        "ERA-014",
+        "ERA-015"
+      ]
+    },
+    "ERA-017": {
+      "number": 28,
+      "id": 5693599180,
+      "node_id": "I_kwDOU6nJaM8AAAABU11tzA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/28",
+      "branch": "28-run-durable-leased-workers-with-bounded-source-and-tenant-concurrency",
+      "blockers": [
+        "EPIC-01",
+        "ERA-004"
+      ]
+    },
+    "ERA-018": {
+      "number": 29,
+      "id": 5693599378,
+      "node_id": "I_kwDOU6nJaM8AAAABU11ukg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/29",
+      "branch": "29-complete-adapter-deduplication-and-checkpoint-recovery",
+      "blockers": [
+        "EPIC-01",
+        "ERA-011",
+        "ERA-017"
+      ]
+    },
+    "ERA-019": {
+      "number": 30,
+      "id": 5693599584,
+      "node_id": "I_kwDOU6nJaM8AAAABU11vYA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/30",
+      "branch": "30-expose-partial-failed-and-unknown-execution-outcomes",
+      "blockers": [
+        "EPIC-01",
+        "ERA-017",
+        "ERA-018"
+      ]
+    },
+    "ERA-020": {
+      "number": 31,
+      "id": 5693599916,
+      "node_id": "I_kwDOU6nJaM8AAAABU11wrA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/31",
+      "branch": "31-prove-recovery-with-a-deterministic-cross-process-failure-harness",
+      "blockers": [
+        "EPIC-01",
+        "ERA-016",
+        "ERA-019"
+      ]
+    },
+    "ERA-021": {
+      "number": 32,
+      "id": 5693600119,
+      "node_id": "I_kwDOU6nJaM8AAAABU11xdw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/32",
+      "branch": "32-define-per-source-disposition-and-request-closure-transitions",
+      "blockers": [
+        "EPIC-01",
+        "ERA-004"
+      ]
+    },
+    "ERA-022": {
+      "number": 33,
+      "id": 5693600374,
+      "node_id": "I_kwDOU6nJaM8AAAABU11ydg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/33",
+      "branch": "33-manage-retention-holds-blockers-and-source-owner-intervention",
+      "blockers": [
+        "EPIC-01",
+        "ERA-005",
+        "ERA-010",
+        "ERA-021"
+      ]
+    },
+    "ERA-023": {
+      "number": 34,
+      "id": 5693600562,
+      "node_id": "I_kwDOU6nJaM8AAAABU11zMg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/34",
+      "branch": "34-close-requests-with-explicit-coverage-and-acknowledged-exceptions",
+      "blockers": [
+        "EPIC-01",
+        "ERA-009",
+        "ERA-021",
+        "ERA-022"
+      ]
+    },
+    "ERA-024": {
+      "number": 35,
+      "id": 5693600928,
+      "node_id": "I_kwDOU6nJaM8AAAABU110oA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/35",
+      "branch": "35-demonstrate-complete-customer-request-scenarios",
+      "blockers": [
+        "EPIC-01",
+        "ERA-012",
+        "ERA-015",
+        "ERA-019",
+        "ERA-023"
+      ]
+    },
+    "ERA-025": {
+      "number": 36,
+      "id": 5693601144,
+      "node_id": "I_kwDOU6nJaM8AAAABU111eA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/36",
+      "branch": "36-harden-attributable-audit-events-and-evidence-retention",
+      "blockers": [
+        "EPIC-01",
+        "ERA-004"
+      ]
+    },
+    "ERA-026": {
+      "number": 37,
+      "id": 5693601340,
+      "node_id": "I_kwDOU6nJaM8AAAABU112PA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/37",
+      "branch": "37-deliver-tenant-authorized-audit-timeline-and-export",
+      "blockers": [
+        "EPIC-01",
+        "ERA-025"
+      ]
+    },
+    "ERA-027": {
+      "number": 38,
+      "id": 5693601524,
+      "node_id": "I_kwDOU6nJaM8AAAABU1129A",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/38",
+      "branch": "38-show-operational-health-and-actionable-workflow-metrics",
+      "blockers": [
+        "EPIC-01",
+        "ERA-007",
+        "ERA-017"
+      ]
+    },
+    "ERA-028": {
+      "number": 39,
+      "id": 5693601877,
+      "node_id": "I_kwDOU6nJaM8AAAABU114VQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/39",
+      "branch": "39-exercise-operational-interventions-and-data-minimization-policies",
+      "blockers": [
+        "EPIC-01",
+        "ERA-019",
+        "ERA-022",
+        "ERA-026",
+        "ERA-027"
+      ]
+    },
+    "ERA-029": {
+      "number": 40,
+      "id": 5693602093,
+      "node_id": "I_kwDOU6nJaM8AAAABU115LQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/40",
+      "branch": "40-package-the-application-topology-for-a-clean-https-deployment",
+      "blockers": [
+        "EPIC-01",
+        "ERA-004"
+      ]
+    },
+    "ERA-030": {
+      "number": 41,
+      "id": 5693602313,
+      "node_id": "I_kwDOU6nJaM8AAAABU116CQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/41",
+      "branch": "41-build-immutable-images-and-an-approved-promotion-pipeline",
+      "blockers": [
+        "EPIC-01",
+        "ERA-029"
+      ]
+    },
+    "ERA-031": {
+      "number": 42,
+      "id": 5693602534,
+      "node_id": "I_kwDOU6nJaM8AAAABU1165g",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/42",
+      "branch": "42-prove-safe-backup-restore-credential-rotation-and-rollback",
+      "blockers": [
+        "EPIC-01",
+        "ERA-018",
+        "ERA-030"
+      ]
+    },
+    "ERA-032": {
+      "number": 43,
+      "id": 5693602900,
+      "node_id": "I_kwDOU6nJaM8AAAABU118VA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/43",
+      "branch": "43-accept-the-deployed-end-to-end-release-candidate",
+      "blockers": [
+        "EPIC-01",
+        "ERA-024",
+        "ERA-026",
+        "ERA-027",
+        "ERA-028",
+        "ERA-031",
+        "ERA-040"
+      ]
+    },
+    "ERA-033": {
+      "number": 44,
+      "id": 5693603132,
+      "node_id": "I_kwDOU6nJaM8AAAABU119PA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/44",
+      "branch": "44-generate-repeatable-inventory-and-workflow-scale-workloads",
+      "blockers": [
+        "EPIC-01",
+        "ERA-004",
+        "ERA-007"
+      ]
+    },
+    "ERA-034": {
+      "number": 45,
+      "id": 5693603317,
+      "node_id": "I_kwDOU6nJaM8AAAABU1199Q",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/45",
+      "branch": "45-prove-isolation-and-recovery-with-multiple-api-and-worker-instances",
+      "blockers": [
+        "EPIC-01",
+        "ERA-007",
+        "ERA-017",
+        "ERA-029",
+        "ERA-033"
+      ]
+    },
+    "ERA-035": {
+      "number": 46,
+      "id": 5693603519,
+      "node_id": "I_kwDOU6nJaM8AAAABU11-vw",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/46",
+      "branch": "46-measure-capacity-fairness-and-failure-isolation",
+      "blockers": [
+        "EPIC-01",
+        "ERA-007",
+        "ERA-012",
+        "ERA-027",
+        "ERA-033",
+        "ERA-034",
+        "ERA-039"
+      ]
+    },
+    "ERA-036": {
+      "number": 47,
+      "id": 5693603905,
+      "node_id": "I_kwDOU6nJaM8AAAABU12AQQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/47",
+      "branch": "47-publish-the-architecture-portfolio-and-evidence-based-scaling-handoff",
+      "blockers": [
+        "EPIC-01",
+        "ERA-007",
+        "ERA-020",
+        "ERA-032",
+        "ERA-035",
+        "ERA-042"
+      ]
+    },
+    "ERA-037": {
+      "number": 48,
+      "id": 5693604149,
+      "node_id": "I_kwDOU6nJaM8AAAABU12BNQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/48",
+      "branch": "48-define-the-demo-source-catalog-business-story-and-scenario-blueprint",
+      "blockers": []
+    },
+    "ERA-038": {
+      "number": 49,
+      "id": 5693604421,
+      "node_id": "I_kwDOU6nJaM8AAAABU12CRQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/49",
+      "branch": "49-create-the-three-store-environment-and-deterministic-synthetic-fixtures",
+      "blockers": [
+        "ERA-037"
+      ]
+    },
+    "ERA-039": {
+      "number": 50,
+      "id": 5693604644,
+      "node_id": "I_kwDOU6nJaM8AAAABU12DJA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/50",
+      "branch": "50-implement-the-redis-cache-adapter-with-safe-expiry-and-recreation-handling",
+      "blockers": [
+        "ERA-006",
+        "ERA-017",
+        "ERA-038"
+      ]
+    },
+    "ERA-040": {
+      "number": 51,
+      "id": 5693605013,
+      "node_id": "I_kwDOU6nJaM8AAAABU12ElQ",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/51",
+      "branch": "51-build-the-guided-three-source-demo-and-repeatable-scenario-reset",
+      "blockers": [
+        "ERA-024",
+        "ERA-026",
+        "ERA-038",
+        "ERA-039"
+      ]
+    },
+    "ERA-041": {
+      "number": 52,
+      "id": 5693605214,
+      "node_id": "I_kwDOU6nJaM8AAAABU12FXg",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/52",
+      "branch": "52-assess-demo-hosting-recurring-cost-and-resource-viability",
+      "blockers": [
+        "ERA-037"
+      ]
+    },
+    "ERA-042": {
+      "number": 53,
+      "id": 5693605436,
+      "node_id": "I_kwDOU6nJaM8AAAABU12GPA",
+      "url": "https://github.com/igrgin/erasure-control-plane/issues/53",
+      "branch": "53-launch-and-accept-a-publicly-visible-synthetic-demo",
+      "blockers": [
+        "ERA-031",
+        "ERA-032",
+        "ERA-040",
+        "ERA-041"
+      ]
+    }
+  },
+  "milestone": {
+    "number": 1,
+    "url": "https://github.com/igrgin/erasure-control-plane/milestone/1"
+  },
+  "publication_status": "published with native sub-issues and issue dependencies"
+}
