@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "realm": {"type": "keyword"},
+      "account_key": {"type": "keyword"},
+      "attribution_version": {"type": "keyword"},
+      "event_day": {"type": "date", "format": "strict_date_time"},
+      "shipment_reference": {"type": "keyword"},
+      "run_generation": {"type": "keyword"},
+      "payload": {"type": "text"}
+    }
+  }
+}

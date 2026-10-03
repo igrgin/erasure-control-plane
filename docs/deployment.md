@@ -4,7 +4,7 @@ Status: a plan to implement and verify in EPIC-08. No host, cloud account, domai
 
 ## Small complete environment
 
-Run a reverse proxy serving React and routing API traffic, the control-plane API, a worker process using the same backend artifact in a worker profile, PostgreSQL, Keycloak, three independent adapters and their synthetic PostgreSQL, MongoDB, and Redis source stores. Use distinct PostgreSQL databases/users for control-plane and source records, plus private MongoDB and Redis services. Keep source stores accessible only to their adapters. Expose HTTPS to the browser; the control plane, worker, identity provider, and adapter ingress use configured trusted internal routes.
+Run a reverse proxy serving React and routing API traffic, the control-plane API, a worker process using the same backend artifact in a worker profile, PostgreSQL, Keycloak, three independent adapters and their synthetic fulfillment/support PostgreSQL databases and Elasticsearch source store. Use distinct PostgreSQL databases/users for the control plane, each source and the search adapter ledger, plus a private Elasticsearch service. Keep source stores accessible only to their adapters. Expose HTTPS to the browser; the control plane, worker, identity provider, and adapter ingress use configured trusted internal routes.
 
 Provide a local Compose environment and a deployment override. Docker documents [single-server Compose deployment](https://docs.docker.com/compose/how-tos/production/). This represents production process boundaries on one host; it provides no host-level high availability.
 
