@@ -1,0 +1,1143 @@
+{
+  "version": 3,
+  "product": "Erasure",
+  "release": "v0.1 end-to-end demonstration",
+  "issue_status": "proposed; not published",
+  "epics": [
+    {
+      "id": "EPIC-01",
+      "title": "Safe end-to-end foundation",
+      "issues": [
+        "ERA-001",
+        "ERA-002",
+        "ERA-003",
+        "ERA-004"
+      ],
+      "body_file": "planning/epics/EPIC-01.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-01"
+      ],
+      "depends_on_epics": [],
+      "entry_issue_dependencies": [
+        "ERA-037"
+      ],
+      "external_issue_dependencies": [
+        "ERA-037"
+      ],
+      "acceptance_demo": "Employee logs in, selects an account, requests a proposal, owner approves, adapter deletes fixture records, and audit shows its receipt.",
+      "primary_ownership": "Shared contracts and seeded workflow; integration owner coordinates changes."
+    },
+    {
+      "id": "EPIC-02",
+      "title": "Registered source coverage and account inventory",
+      "issues": [
+        "ERA-005",
+        "ERA-006",
+        "ERA-007",
+        "ERA-008"
+      ],
+      "body_file": "planning/epics/EPIC-02.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-02"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [],
+      "external_issue_dependencies": [
+        "ERA-004"
+      ],
+      "acceptance_demo": "Administrator registers a source; adapter reports dated summaries; operator sees amount, freshness, and coverage.",
+      "primary_ownership": "source-registry and inventory; account-mapping public contract."
+    },
+    {
+      "id": "EPIC-03",
+      "title": "Precise scope across heterogeneous sources",
+      "issues": [
+        "ERA-009",
+        "ERA-010",
+        "ERA-011",
+        "ERA-012"
+      ],
+      "body_file": "planning/epics/EPIC-03.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-03"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [
+        "ERA-006"
+      ],
+      "external_issue_dependencies": [
+        "ERA-006",
+        "ERA-008",
+        "ERA-038"
+      ],
+      "acceptance_demo": "One request spans two sources with different time/retention rules and exposes proposed actions, retained subsets, and incompatible boundaries.",
+      "primary_ownership": "Request intake/scope, proposal generation, second adapter, request-scope UI."
+    },
+    {
+      "id": "EPIC-04",
+      "title": "Accountable owner decisions",
+      "issues": [
+        "ERA-013",
+        "ERA-014",
+        "ERA-015",
+        "ERA-016"
+      ],
+      "body_file": "planning/epics/EPIC-04.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-04"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [
+        "ERA-005"
+      ],
+      "external_issue_dependencies": [
+        "ERA-005",
+        "ERA-010"
+      ],
+      "acceptance_demo": "Only an authorized owner approves; changes invalidate approval; competing decisions and withdrawal behave consistently.",
+      "primary_ownership": "proposals-decisions and owner review UI; public dispatch-authorization contract."
+    },
+    {
+      "id": "EPIC-05",
+      "title": "Reliable execution and recovery",
+      "issues": [
+        "ERA-017",
+        "ERA-018",
+        "ERA-019",
+        "ERA-020"
+      ],
+      "body_file": "planning/epics/EPIC-05.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-05"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [],
+      "external_issue_dependencies": [
+        "ERA-004",
+        "ERA-011",
+        "ERA-016"
+      ],
+      "acceptance_demo": "Crashes, duplicate delivery, partial cleanup, and lost responses remain visible and recover safely.",
+      "primary_ownership": "execution engine, adapter operation ledgers, execution UI, failure harness."
+    },
+    {
+      "id": "EPIC-06",
+      "title": "Blockers and complete case disposition",
+      "issues": [
+        "ERA-021",
+        "ERA-022",
+        "ERA-023",
+        "ERA-024"
+      ],
+      "body_file": "planning/epics/EPIC-06.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-06"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [],
+      "external_issue_dependencies": [
+        "ERA-004",
+        "ERA-005",
+        "ERA-009",
+        "ERA-010",
+        "ERA-012",
+        "ERA-015",
+        "ERA-019"
+      ],
+      "acceptance_demo": "Operator resolves blockers or records exceptions; closure lists a disposition for every scoped source.",
+      "primary_ownership": "Case lifecycle/disposition, blockers, closure UI, customer-request scenarios."
+    },
+    {
+      "id": "EPIC-07",
+      "title": "Audit evidence and operational visibility",
+      "issues": [
+        "ERA-025",
+        "ERA-026",
+        "ERA-027",
+        "ERA-028"
+      ],
+      "body_file": "planning/epics/EPIC-07.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-07"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [],
+      "external_issue_dependencies": [
+        "ERA-004",
+        "ERA-007",
+        "ERA-017",
+        "ERA-019",
+        "ERA-022"
+      ],
+      "acceptance_demo": "Auditor reconstructs a case; operators detect stale sources and stuck work and apply safe evidence-retention rules.",
+      "primary_ownership": "audit, observability, audit/operations views, operational runbooks."
+    },
+    {
+      "id": "EPIC-08",
+      "title": "Deployment and release operations",
+      "issues": [
+        "ERA-029",
+        "ERA-030",
+        "ERA-031",
+        "ERA-032"
+      ],
+      "body_file": "planning/epics/EPIC-08.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-08"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [],
+      "external_issue_dependencies": [
+        "ERA-004",
+        "ERA-018",
+        "ERA-024",
+        "ERA-026",
+        "ERA-027",
+        "ERA-028",
+        "ERA-040"
+      ],
+      "acceptance_demo": "A clean target runs the complete workflow and passes restore, rotation, rollback, and restart exercises.",
+      "primary_ownership": "deploy configuration, release workflows, recovery automation, deployed acceptance."
+    },
+    {
+      "id": "EPIC-09",
+      "title": "Measured scaling and architecture handoff",
+      "issues": [
+        "ERA-033",
+        "ERA-034",
+        "ERA-035",
+        "ERA-036"
+      ],
+      "body_file": "planning/epics/EPIC-09.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-09"
+      ],
+      "depends_on_epics": [
+        "EPIC-01"
+      ],
+      "entry_issue_dependencies": [
+        "ERA-007"
+      ],
+      "external_issue_dependencies": [
+        "ERA-004",
+        "ERA-007",
+        "ERA-012",
+        "ERA-017",
+        "ERA-020",
+        "ERA-027",
+        "ERA-029",
+        "ERA-032",
+        "ERA-039",
+        "ERA-042"
+      ],
+      "acceptance_demo": "Multiple APIs/workers preserve isolation and recovery; measured results and limitations support the growth path.",
+      "primary_ownership": "Load/failure workloads, scale-demo configuration, benchmarks, final architecture evidence."
+    },
+    {
+      "id": "EPIC-10",
+      "title": "Synthetic demo environment and public visibility",
+      "issues": [
+        "ERA-037",
+        "ERA-038",
+        "ERA-039",
+        "ERA-040",
+        "ERA-041",
+        "ERA-042"
+      ],
+      "body_file": "planning/epics/EPIC-10.md",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:epic",
+        "epic:epic-10"
+      ],
+      "depends_on_epics": [],
+      "entry_issue_dependencies": [],
+      "external_issue_dependencies": [
+        "ERA-006",
+        "ERA-017",
+        "ERA-024",
+        "ERA-026",
+        "ERA-031",
+        "ERA-032"
+      ],
+      "acceptance_demo": "Reproduce synthetic cleanup across PostgreSQL, MongoDB, and Redis and complete the public tour plus one controlled live session on the accepted hosted candidate.",
+      "primary_ownership": "Demo blueprint, fixture/source infrastructure, Redis adapter, guided tour, hosting comparison and visible launch."
+    }
+  ],
+  "issues": [
+    {
+      "id": "ERA-001",
+      "title": "Bootstrap employee login and isolated business accounts",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-01"
+      ],
+      "requirements": [
+        "REQ-01",
+        "REQ-12"
+      ],
+      "depends_on": [
+        "ERA-037"
+      ],
+      "body_file": "planning/issues/ERA-001.md",
+      "epic": "EPIC-01"
+    },
+    {
+      "id": "ERA-002",
+      "title": "Request a fresh proposal from one independent adapter",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-01"
+      ],
+      "requirements": [
+        "REQ-04",
+        "REQ-05"
+      ],
+      "depends_on": [
+        "ERA-001"
+      ],
+      "body_file": "planning/issues/ERA-002.md",
+      "epic": "EPIC-01"
+    },
+    {
+      "id": "ERA-003",
+      "title": "Approve and execute the first proposal with durable evidence",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-01"
+      ],
+      "requirements": [
+        "REQ-06",
+        "REQ-07",
+        "REQ-08",
+        "REQ-11"
+      ],
+      "depends_on": [
+        "ERA-002"
+      ],
+      "body_file": "planning/issues/ERA-003.md",
+      "epic": "EPIC-01"
+    },
+    {
+      "id": "ERA-004",
+      "title": "Make the thin workflow reproducible in CI and a local walkthrough",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-01"
+      ],
+      "requirements": [
+        "REQ-07",
+        "REQ-12",
+        "REQ-13"
+      ],
+      "depends_on": [
+        "ERA-003"
+      ],
+      "body_file": "planning/issues/ERA-004.md",
+      "epic": "EPIC-01"
+    },
+    {
+      "id": "ERA-005",
+      "title": "Register sources and bind owners and adapter principals",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-02"
+      ],
+      "requirements": [
+        "REQ-02",
+        "REQ-12"
+      ],
+      "depends_on": [
+        "ERA-004"
+      ],
+      "body_file": "planning/issues/ERA-005.md",
+      "epic": "EPIC-02"
+    },
+    {
+      "id": "ERA-006",
+      "title": "Publish versioned time, retention, and account-mapping capabilities",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-02"
+      ],
+      "requirements": [
+        "REQ-01",
+        "REQ-02",
+        "REQ-09"
+      ],
+      "depends_on": [
+        "ERA-005"
+      ],
+      "body_file": "planning/issues/ERA-006.md",
+      "epic": "EPIC-02"
+    },
+    {
+      "id": "ERA-007",
+      "title": "Ingest tenant inventory with revisions, completeness, and resync",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-02"
+      ],
+      "requirements": [
+        "REQ-03",
+        "REQ-12"
+      ],
+      "depends_on": [
+        "ERA-006"
+      ],
+      "body_file": "planning/issues/ERA-007.md",
+      "epic": "EPIC-02"
+    },
+    {
+      "id": "ERA-008",
+      "title": "Show business-account inventory and source coverage",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-02"
+      ],
+      "requirements": [
+        "REQ-02",
+        "REQ-03"
+      ],
+      "depends_on": [
+        "ERA-007"
+      ],
+      "body_file": "planning/issues/ERA-008.md",
+      "epic": "EPIC-02"
+    },
+    {
+      "id": "ERA-009",
+      "title": "Capture immutable request scope and precise time boundaries",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-03"
+      ],
+      "requirements": [
+        "REQ-04",
+        "REQ-09"
+      ],
+      "depends_on": [
+        "ERA-006"
+      ],
+      "body_file": "planning/issues/ERA-009.md",
+      "epic": "EPIC-03"
+    },
+    {
+      "id": "ERA-010",
+      "title": "Generate source-specific proposals with retention and selection preconditions",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-03"
+      ],
+      "requirements": [
+        "REQ-05",
+        "REQ-09"
+      ],
+      "depends_on": [
+        "ERA-009",
+        "ERA-006"
+      ],
+      "body_file": "planning/issues/ERA-010.md",
+      "epic": "EPIC-03"
+    },
+    {
+      "id": "ERA-011",
+      "title": "Build a second adapter with different time and cleanup behavior",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-03"
+      ],
+      "requirements": [
+        "REQ-03",
+        "REQ-05",
+        "REQ-07",
+        "REQ-09"
+      ],
+      "depends_on": [
+        "ERA-006",
+        "ERA-038"
+      ],
+      "body_file": "planning/issues/ERA-011.md",
+      "epic": "EPIC-03"
+    },
+    {
+      "id": "ERA-012",
+      "title": "Review a multi-source request and its time/retention differences",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-03"
+      ],
+      "requirements": [
+        "REQ-03",
+        "REQ-04",
+        "REQ-05",
+        "REQ-09"
+      ],
+      "depends_on": [
+        "ERA-010",
+        "ERA-011",
+        "ERA-008"
+      ],
+      "body_file": "planning/issues/ERA-012.md",
+      "epic": "EPIC-03"
+    },
+    {
+      "id": "ERA-013",
+      "title": "Enforce source-owner authority and concurrent decisions",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-04"
+      ],
+      "requirements": [
+        "REQ-06",
+        "REQ-12"
+      ],
+      "depends_on": [
+        "ERA-005"
+      ],
+      "body_file": "planning/issues/ERA-013.md",
+      "epic": "EPIC-04"
+    },
+    {
+      "id": "ERA-014",
+      "title": "Invalidate stale approval and revalidate before source effects",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-04"
+      ],
+      "requirements": [
+        "REQ-05",
+        "REQ-06",
+        "REQ-07"
+      ],
+      "depends_on": [
+        "ERA-013",
+        "ERA-010"
+      ],
+      "body_file": "planning/issues/ERA-014.md",
+      "epic": "EPIC-04"
+    },
+    {
+      "id": "ERA-015",
+      "title": "Provide an owner review queue with explicit decisions and reasons",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-04"
+      ],
+      "requirements": [
+        "REQ-05",
+        "REQ-06",
+        "REQ-11"
+      ],
+      "depends_on": [
+        "ERA-013"
+      ],
+      "body_file": "planning/issues/ERA-015.md",
+      "epic": "EPIC-04"
+    },
+    {
+      "id": "ERA-016",
+      "title": "Serialize overlapping cleanup and define cancellation races",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-04"
+      ],
+      "requirements": [
+        "REQ-04",
+        "REQ-06",
+        "REQ-08"
+      ],
+      "depends_on": [
+        "ERA-014",
+        "ERA-015"
+      ],
+      "body_file": "planning/issues/ERA-016.md",
+      "epic": "EPIC-04"
+    },
+    {
+      "id": "ERA-017",
+      "title": "Run durable leased workers with bounded source and tenant concurrency",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-05"
+      ],
+      "requirements": [
+        "REQ-08",
+        "REQ-14"
+      ],
+      "depends_on": [
+        "ERA-004"
+      ],
+      "body_file": "planning/issues/ERA-017.md",
+      "epic": "EPIC-05"
+    },
+    {
+      "id": "ERA-018",
+      "title": "Complete adapter deduplication and checkpoint recovery",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-05"
+      ],
+      "requirements": [
+        "REQ-07",
+        "REQ-08"
+      ],
+      "depends_on": [
+        "ERA-017",
+        "ERA-011"
+      ],
+      "body_file": "planning/issues/ERA-018.md",
+      "epic": "EPIC-05"
+    },
+    {
+      "id": "ERA-019",
+      "title": "Expose partial, failed, and unknown execution outcomes",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-05"
+      ],
+      "requirements": [
+        "REQ-08",
+        "REQ-10",
+        "REQ-11"
+      ],
+      "depends_on": [
+        "ERA-017",
+        "ERA-018"
+      ],
+      "body_file": "planning/issues/ERA-019.md",
+      "epic": "EPIC-05"
+    },
+    {
+      "id": "ERA-020",
+      "title": "Prove recovery with a deterministic cross-process failure harness",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-05"
+      ],
+      "requirements": [
+        "REQ-08",
+        "REQ-12",
+        "REQ-14"
+      ],
+      "depends_on": [
+        "ERA-019",
+        "ERA-016"
+      ],
+      "body_file": "planning/issues/ERA-020.md",
+      "epic": "EPIC-05"
+    },
+    {
+      "id": "ERA-021",
+      "title": "Define per-source disposition and request closure transitions",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-06"
+      ],
+      "requirements": [
+        "REQ-10",
+        "REQ-11"
+      ],
+      "depends_on": [
+        "ERA-004"
+      ],
+      "body_file": "planning/issues/ERA-021.md",
+      "epic": "EPIC-06"
+    },
+    {
+      "id": "ERA-022",
+      "title": "Manage retention holds, blockers, and source-owner intervention",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-06"
+      ],
+      "requirements": [
+        "REQ-09",
+        "REQ-10"
+      ],
+      "depends_on": [
+        "ERA-021",
+        "ERA-010",
+        "ERA-005"
+      ],
+      "body_file": "planning/issues/ERA-022.md",
+      "epic": "EPIC-06"
+    },
+    {
+      "id": "ERA-023",
+      "title": "Close requests with explicit coverage and acknowledged exceptions",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-06"
+      ],
+      "requirements": [
+        "REQ-04",
+        "REQ-10",
+        "REQ-11"
+      ],
+      "depends_on": [
+        "ERA-021",
+        "ERA-022",
+        "ERA-009"
+      ],
+      "body_file": "planning/issues/ERA-023.md",
+      "epic": "EPIC-06"
+    },
+    {
+      "id": "ERA-024",
+      "title": "Demonstrate complete customer-request scenarios",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-06"
+      ],
+      "requirements": [
+        "REQ-04",
+        "REQ-07",
+        "REQ-09",
+        "REQ-10",
+        "REQ-11"
+      ],
+      "depends_on": [
+        "ERA-023",
+        "ERA-012",
+        "ERA-015",
+        "ERA-019"
+      ],
+      "body_file": "planning/issues/ERA-024.md",
+      "epic": "EPIC-06"
+    },
+    {
+      "id": "ERA-025",
+      "title": "Harden attributable audit events and evidence retention",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-07"
+      ],
+      "requirements": [
+        "REQ-11",
+        "REQ-12"
+      ],
+      "depends_on": [
+        "ERA-004"
+      ],
+      "body_file": "planning/issues/ERA-025.md",
+      "epic": "EPIC-07"
+    },
+    {
+      "id": "ERA-026",
+      "title": "Deliver tenant-authorized audit timeline and export",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-07"
+      ],
+      "requirements": [
+        "REQ-11",
+        "REQ-12"
+      ],
+      "depends_on": [
+        "ERA-025"
+      ],
+      "body_file": "planning/issues/ERA-026.md",
+      "epic": "EPIC-07"
+    },
+    {
+      "id": "ERA-027",
+      "title": "Show operational health and actionable workflow metrics",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-07"
+      ],
+      "requirements": [
+        "REQ-03",
+        "REQ-08",
+        "REQ-13"
+      ],
+      "depends_on": [
+        "ERA-007",
+        "ERA-017"
+      ],
+      "body_file": "planning/issues/ERA-027.md",
+      "epic": "EPIC-07"
+    },
+    {
+      "id": "ERA-028",
+      "title": "Exercise operational interventions and data-minimization policies",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-07"
+      ],
+      "requirements": [
+        "REQ-09",
+        "REQ-11",
+        "REQ-13"
+      ],
+      "depends_on": [
+        "ERA-026",
+        "ERA-027",
+        "ERA-022",
+        "ERA-019"
+      ],
+      "body_file": "planning/issues/ERA-028.md",
+      "epic": "EPIC-07"
+    },
+    {
+      "id": "ERA-029",
+      "title": "Package the application topology for a clean HTTPS deployment",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-08"
+      ],
+      "requirements": [
+        "REQ-13"
+      ],
+      "depends_on": [
+        "ERA-004"
+      ],
+      "body_file": "planning/issues/ERA-029.md",
+      "epic": "EPIC-08"
+    },
+    {
+      "id": "ERA-030",
+      "title": "Build immutable images and an approved promotion pipeline",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-08"
+      ],
+      "requirements": [
+        "REQ-12",
+        "REQ-13"
+      ],
+      "depends_on": [
+        "ERA-029"
+      ],
+      "body_file": "planning/issues/ERA-030.md",
+      "epic": "EPIC-08"
+    },
+    {
+      "id": "ERA-031",
+      "title": "Prove safe backup, restore, credential rotation, and rollback",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-08"
+      ],
+      "requirements": [
+        "REQ-08",
+        "REQ-13"
+      ],
+      "depends_on": [
+        "ERA-030",
+        "ERA-018"
+      ],
+      "body_file": "planning/issues/ERA-031.md",
+      "epic": "EPIC-08"
+    },
+    {
+      "id": "ERA-032",
+      "title": "Accept the deployed end-to-end release candidate",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-08"
+      ],
+      "requirements": [
+        "REQ-01",
+        "REQ-02",
+        "REQ-03",
+        "REQ-04",
+        "REQ-05",
+        "REQ-06",
+        "REQ-07",
+        "REQ-08",
+        "REQ-09",
+        "REQ-10",
+        "REQ-11",
+        "REQ-12",
+        "REQ-13",
+        "REQ-15"
+      ],
+      "depends_on": [
+        "ERA-031",
+        "ERA-024",
+        "ERA-026",
+        "ERA-027",
+        "ERA-028",
+        "ERA-040"
+      ],
+      "body_file": "planning/issues/ERA-032.md",
+      "epic": "EPIC-08"
+    },
+    {
+      "id": "ERA-033",
+      "title": "Generate repeatable inventory and workflow scale workloads",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-09"
+      ],
+      "requirements": [
+        "REQ-03",
+        "REQ-14"
+      ],
+      "depends_on": [
+        "ERA-007",
+        "ERA-004"
+      ],
+      "body_file": "planning/issues/ERA-033.md",
+      "epic": "EPIC-09"
+    },
+    {
+      "id": "ERA-034",
+      "title": "Prove isolation and recovery with multiple API and worker instances",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-09"
+      ],
+      "requirements": [
+        "REQ-08",
+        "REQ-12",
+        "REQ-14"
+      ],
+      "depends_on": [
+        "ERA-033",
+        "ERA-017",
+        "ERA-029"
+      ],
+      "body_file": "planning/issues/ERA-034.md",
+      "epic": "EPIC-09"
+    },
+    {
+      "id": "ERA-035",
+      "title": "Measure capacity, fairness, and failure isolation",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-09"
+      ],
+      "requirements": [
+        "REQ-03",
+        "REQ-08",
+        "REQ-14"
+      ],
+      "depends_on": [
+        "ERA-033",
+        "ERA-034",
+        "ERA-027",
+        "ERA-012",
+        "ERA-039"
+      ],
+      "body_file": "planning/issues/ERA-035.md",
+      "epic": "EPIC-09"
+    },
+    {
+      "id": "ERA-036",
+      "title": "Publish the architecture portfolio and evidence-based scaling handoff",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-09"
+      ],
+      "requirements": [
+        "REQ-13",
+        "REQ-14",
+        "REQ-15"
+      ],
+      "depends_on": [
+        "ERA-035",
+        "ERA-032",
+        "ERA-020",
+        "ERA-042"
+      ],
+      "body_file": "planning/issues/ERA-036.md",
+      "epic": "EPIC-09"
+    },
+    {
+      "id": "ERA-037",
+      "title": "Define the demo source catalog, business story, and scenario blueprint",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-10"
+      ],
+      "requirements": [
+        "REQ-13",
+        "REQ-15"
+      ],
+      "depends_on": [],
+      "body_file": "planning/issues/ERA-037.md",
+      "epic": "EPIC-10"
+    },
+    {
+      "id": "ERA-038",
+      "title": "Create the three-store environment and deterministic synthetic fixtures",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-10"
+      ],
+      "requirements": [
+        "REQ-01",
+        "REQ-03",
+        "REQ-09",
+        "REQ-13",
+        "REQ-15"
+      ],
+      "depends_on": [
+        "ERA-037"
+      ],
+      "body_file": "planning/issues/ERA-038.md",
+      "epic": "EPIC-10"
+    },
+    {
+      "id": "ERA-039",
+      "title": "Implement the Redis cache adapter with safe expiry and recreation handling",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-10"
+      ],
+      "requirements": [
+        "REQ-03",
+        "REQ-05",
+        "REQ-07",
+        "REQ-08",
+        "REQ-09",
+        "REQ-15"
+      ],
+      "depends_on": [
+        "ERA-038",
+        "ERA-006",
+        "ERA-017"
+      ],
+      "body_file": "planning/issues/ERA-039.md",
+      "epic": "EPIC-10"
+    },
+    {
+      "id": "ERA-040",
+      "title": "Build the guided three-source demo and repeatable scenario reset",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-10"
+      ],
+      "requirements": [
+        "REQ-07",
+        "REQ-10",
+        "REQ-11",
+        "REQ-12",
+        "REQ-15"
+      ],
+      "depends_on": [
+        "ERA-038",
+        "ERA-039",
+        "ERA-024",
+        "ERA-026"
+      ],
+      "body_file": "planning/issues/ERA-040.md",
+      "epic": "EPIC-10"
+    },
+    {
+      "id": "ERA-041",
+      "title": "Assess demo hosting, recurring cost, and resource viability",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-10"
+      ],
+      "requirements": [
+        "REQ-13",
+        "REQ-15"
+      ],
+      "depends_on": [
+        "ERA-037"
+      ],
+      "body_file": "planning/issues/ERA-041.md",
+      "epic": "EPIC-10"
+    },
+    {
+      "id": "ERA-042",
+      "title": "Launch and accept a publicly visible synthetic demo",
+      "milestone": "v0.1 end-to-end demonstration",
+      "labels": [
+        "type:implementation",
+        "epic:epic-10"
+      ],
+      "requirements": [
+        "REQ-12",
+        "REQ-13",
+        "REQ-15"
+      ],
+      "depends_on": [
+        "ERA-040",
+        "ERA-041",
+        "ERA-032",
+        "ERA-031"
+      ],
+      "body_file": "planning/issues/ERA-042.md",
+      "epic": "EPIC-10"
+    }
+  ]
+}
