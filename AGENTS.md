@@ -6,6 +6,7 @@ Before starting an issue, read [the Git workflow](docs/git-workflow.md) and run 
 
 ## Git rules
 
+- Create an issue branch only when the issue is assigned or taken for implementation and its prerequisites are accepted. Creating an issue does not create a branch.
 - Use one dedicated branch per issue, including epic integration work. Name it `<github-issue-number>-<issue-title-in-kebab-case>`, stripping any `[ERA-xxx]` or `[EPIC-xx]` title prefix. Example: `48-define-the-demo-source-catalog-business-story-and-scenario-blueprint`.
 - Use a flat branch name. Add a namespace only when the user explicitly requests one.
 - Start from the latest `origin/main` unless the user explicitly selects another base. Reuse an existing issue branch without discarding its commits; update its base before new work.
