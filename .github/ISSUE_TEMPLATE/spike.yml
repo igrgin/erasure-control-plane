@@ -1,0 +1,25 @@
+name: spike
+description: Investigate a bounded question and produce a decision or evidence.
+labels: ["spike"]
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What application capability or behavior is involved?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will completion be verified?
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Prerequisites
+      description: Which issues or epic gates must be accepted first?
+    validations:
+      required: false

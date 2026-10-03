@@ -1,0 +1,19 @@
+.pathfinder/
+.env
+.env.*
+!.env.example
+node_modules/
+target/
+dist/
+__pycache__/
+*.pyc
+
+# Local planning and repository-preparation artifacts
+planning/
+docs/development-plan.md
+docs/planning-handoff.md
+docs/repository-setup.md
+scripts/freeze_plan.py
+scripts/validate_plan.py
+scripts/publish_backlog.py
+.github/workflows/planning-integrity.yml
