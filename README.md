@@ -1,8 +1,8 @@
 # Erasure
 
-- Internal control plane for business-account data deletion and anonymization.
-- Tenant boundary: customer business account; one operating company, shared installation.
-- Status: design and backlog only; application and hosted demo pending.
+Erasure is an internal control plane for deleting or anonymizing business-account data across registered sources. Source adapters propose cleanup operations, source owners approve them, and Erasure tracks execution and audit history. One company operates a shared installation; each customer business account is a tenant.
+
+This personal project focuses on software architecture and a deployable end-to-end demo. It is currently in the design and backlog stage; the application and hosted demo are still to be implemented.
 
 ## Planned stack
 
@@ -20,7 +20,8 @@
 5. Adapters execute; Erasure records decisions, blockers, attempts, and source dispositions.
 
 - Recovery: durable jobs, worker leases, stable operation IDs, adapter deduplication.
-- Coverage: registered sources only; adapter-reported outcomes, no independent deletion verification.
+
+Coverage is limited to registered sources. Erasure records adapter-reported outcomes and does not independently verify deletion.
 
 ## Setup
 
