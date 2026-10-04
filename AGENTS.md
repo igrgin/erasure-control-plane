@@ -2,7 +2,7 @@
 
 ## Issue and Git workflow
 
-Before taking an issue, creating or updating its branch, opening a PR, or merging, follow [the Git workflow](docs/git-workflow.md). It defines live readiness checks, branch conventions, PR requirements, and owner approval. Begin implementation only after the readiness check passes and any issue or epic entry criteria have acceptance evidence.
+Before taking an issue, creating or updating its branch, opening a PR, or merging, follow [the Git workflow](docs/git-workflow.md). It defines live readiness checks, branch conventions, PR requirements, and owner approval. Begin implementation only after live GitHub data confirms readiness and any issue or epic entry criteria have acceptance evidence.
 
 Only the project owner approves PRs. Agents must never submit approving reviews, including through the owner's GitHub account. Leave the PR open for owner review; merge only after owner approval and an explicit instruction to merge.
 
