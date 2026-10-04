@@ -11,9 +11,15 @@ jobs:
   policy-tests:
     name: Repository checks
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
       - run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - run: python3 -m unittest discover -s demo/seed -p 'test_*.py'
+      - name: Real source smoke with fresh volumes
+        run: python3 demo/seed/demo.py smoke
+      - name: Stop synthetic sources
+        if: always()
+        run: docker compose -f deploy/demo-sources/compose.yaml --profile sources down

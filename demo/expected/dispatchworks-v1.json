@@ -1,0 +1,800 @@
+{
+  "bytes_unit": "UTF-8 canonical JSON fixture bytes, not engine disk size",
+  "cleanup": {
+    "delivery-search": {
+      "deleted": {
+        "documents": 2
+      },
+      "limits": [
+        "independent copies have no invoice hold",
+        "upstream re-ingestion remains possible"
+      ]
+    },
+    "fulfillment": {
+      "deleted": {
+        "parcels": 4,
+        "scans": 8,
+        "shipments": 2
+      },
+      "retained": {
+        "invoice_holds": 1,
+        "parcels": 2,
+        "scans": 4,
+        "shipments": 1
+      }
+    },
+    "support": {
+      "deleted": {
+        "messages": 4,
+        "tickets": 2
+      },
+      "excluded": [
+        "notification_preference"
+      ]
+    }
+  },
+  "generation": "oracle",
+  "inventory": {
+    "delivery-search": {
+      "before_horizon": "unknown",
+      "buckets": {
+        "harbor": {
+          "2026-09-28T00:00:00Z": {
+            "documents": 1,
+            "serialized_bytes": 215
+          },
+          "2026-10-02T00:00:00Z": {
+            "documents": 0,
+            "serialized_bytes": 0
+          }
+        },
+        "north": {
+          "2026-09-04T00:00:00Z": {
+            "documents": 1,
+            "serialized_bytes": 218
+          },
+          "2026-09-05T00:00:00Z": {
+            "documents": 1,
+            "serialized_bytes": 230
+          },
+          "2026-09-27T00:00:00Z": {
+            "documents": 1,
+            "serialized_bytes": 214
+          },
+          "2026-09-28T00:00:00Z": {
+            "documents": 1,
+            "serialized_bytes": 210
+          },
+          "2026-09-29T00:00:00Z": {
+            "documents": 1,
+            "serialized_bytes": 210
+          },
+          "2026-10-02T00:00:00Z": {
+            "documents": 0,
+            "serialized_bytes": 0
+          }
+        }
+      },
+      "complete": true,
+      "coverage_from": "2026-09-04T00:00:00Z",
+      "coverage_to": "2026-10-04T00:00:00Z",
+      "observed_at": "2026-10-04T00:00:00Z",
+      "retained_outside_coverage": [],
+      "stale_example": {
+        "complete": false,
+        "observed_at": "2026-10-03T00:00:00Z",
+        "reason": "publication withheld"
+      },
+      "unavailable_example": {
+        "buckets": null,
+        "complete": false,
+        "observed_at": null
+      }
+    },
+    "fulfillment": {
+      "before_horizon": "unknown",
+      "buckets": {
+        "harbor": {
+          "2026-09-27T01:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 719,
+            "shipments": 1
+          },
+          "2026-09-28T00:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 738,
+            "shipments": 1
+          },
+          "2026-10-02T00:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T01:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T02:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T03:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T04:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T05:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T06:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T07:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T08:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T09:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T10:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T11:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T12:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T13:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T14:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T15:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T16:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T17:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T18:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T19:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T20:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T21:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T22:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T23:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          }
+        },
+        "north": {
+          "2026-07-05T00:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 769,
+            "shipments": 1
+          },
+          "2026-09-26T23:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 735,
+            "shipments": 1
+          },
+          "2026-09-27T00:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 721,
+            "shipments": 1
+          },
+          "2026-09-27T23:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 704,
+            "shipments": 1
+          },
+          "2026-09-28T01:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 701,
+            "shipments": 1
+          },
+          "2026-09-29T00:00:00Z": {
+            "parcels": 2,
+            "scans": 4,
+            "serialized_bytes": 684,
+            "shipments": 1
+          },
+          "2026-10-02T00:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T01:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T02:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T03:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T04:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T05:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T06:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T07:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T08:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T09:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T10:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T11:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T12:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T13:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T14:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T15:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T16:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T17:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T18:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T19:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T20:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T21:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T22:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          },
+          "2026-10-02T23:00:00Z": {
+            "parcels": 0,
+            "scans": 0,
+            "serialized_bytes": 0,
+            "shipments": 0
+          }
+        }
+      },
+      "complete": true,
+      "coverage_from": "2026-07-06T00:00:00Z",
+      "coverage_to": "2026-10-04T00:00:00Z",
+      "observed_at": "2026-10-04T00:00:00Z",
+      "retained_outside_coverage": [
+        "F-old-held"
+      ],
+      "stale_example": {
+        "complete": false,
+        "observed_at": "2026-10-03T00:00:00Z",
+        "reason": "publication withheld"
+      },
+      "unavailable_example": {
+        "buckets": null,
+        "complete": false,
+        "observed_at": null
+      }
+    },
+    "support": {
+      "before_horizon": "unknown",
+      "buckets": {
+        "harbor": {
+          "2026-09-28T00:00:00Z": {
+            "messages": 2,
+            "serialized_bytes": 353,
+            "tickets": 1
+          },
+          "2026-10-02T00:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T01:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T02:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T03:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T04:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T05:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T06:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T07:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T08:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T09:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T10:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T11:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T12:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T13:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T14:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T15:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T16:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T17:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T18:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T19:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T20:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T21:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T22:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T23:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          }
+        },
+        "north": {
+          "2026-09-27T00:00:00Z": {
+            "messages": 2,
+            "serialized_bytes": 352,
+            "tickets": 1
+          },
+          "2026-09-28T00:00:00Z": {
+            "messages": 2,
+            "serialized_bytes": 338,
+            "tickets": 1
+          },
+          "2026-09-29T00:00:00Z": {
+            "messages": 2,
+            "serialized_bytes": 338,
+            "tickets": 1
+          },
+          "2026-10-02T00:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T01:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T02:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T03:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T04:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T05:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T06:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T07:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T08:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T09:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T10:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T11:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T12:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T13:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T14:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T15:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T16:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T17:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T18:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T19:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T20:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T21:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T22:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          },
+          "2026-10-02T23:00:00Z": {
+            "messages": 0,
+            "serialized_bytes": 0,
+            "tickets": 0
+          }
+        }
+      },
+      "complete": true,
+      "coverage_from": "2026-08-05T00:00:00Z",
+      "coverage_to": "2026-10-04T00:00:00Z",
+      "observed_at": "2026-10-04T00:00:00Z",
+      "retained_outside_coverage": [],
+      "stale_example": {
+        "complete": false,
+        "observed_at": "2026-10-03T00:00:00Z",
+        "reason": "publication withheld"
+      },
+      "unavailable_example": {
+        "buckets": null,
+        "complete": false,
+        "observed_at": null
+      }
+    }
+  },
+  "mapping_version": "dispatchworks-v1",
+  "policy_version": "dispatchworks-v1",
+  "pre_purge": [
+    {
+      "id": "F-expired",
+      "source": "fulfillment",
+      "source_time": "2026-07-05T00:00:00Z"
+    },
+    {
+      "id": "S-expired",
+      "source": "support",
+      "source_time": "2026-08-04T00:00:00Z"
+    },
+    {
+      "id": "E-old",
+      "source": "delivery-search",
+      "source_time": "2026-09-03T00:00:00Z"
+    }
+  ],
+  "reference": "2026-10-04T00:00:00Z",
+  "request": {
+    "account_id": 7,
+    "from_utc": "2026-09-27T00:00:00Z",
+    "realm": "north",
+    "to_utc": "2026-09-29T00:00:00Z"
+  },
+  "seed": 1,
+  "selected": {
+    "delivery-search": {
+      "harbor": [
+        "E-other"
+      ],
+      "north": [
+        "E-mid",
+        "E-start"
+      ]
+    },
+    "fulfillment": {
+      "harbor": [
+        "F-other",
+        "F-switch"
+      ],
+      "north": [
+        "F-held",
+        "F-late",
+        "F-start"
+      ]
+    },
+    "support": {
+      "harbor": [
+        "S-other"
+      ],
+      "north": [
+        "S-mid",
+        "S-start"
+      ]
+    }
+  },
+  "version": "dispatchworks-v1"
+}
