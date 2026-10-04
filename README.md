@@ -7,7 +7,7 @@ Erasure is an internal control plane for deleting or anonymizing business-accoun
 - Control plane: Java, Spring Boot, PostgreSQL.
 - UI: React, TypeScript.
 - Independent source adapters: Java, outbound authenticated API connections.
-- Synthetic demo sources: PostgreSQL, MongoDB, Redis.
+- Synthetic demo sources: two PostgreSQL source databases and Elasticsearch.
 
 ## Workflow
 
