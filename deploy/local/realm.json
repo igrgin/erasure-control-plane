@@ -15,6 +15,9 @@
       "secret": "local-oidc-only",
       "standardFlowEnabled": true,
       "directAccessGrantsEnabled": false,
+      "attributes": {
+        "post.logout.redirect.uris": "http://localhost:18112/"
+      },
       "redirectUris": [
         "http://localhost:18112/login/oauth2/code/keycloak"
       ],

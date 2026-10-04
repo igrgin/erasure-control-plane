@@ -1,5 +1,7 @@
 package com.dispatchworks.erasure.web;
 
+import java.util.Map;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +14,7 @@ import org.springframework.security.web.servlet.util.matcher.PathPatternRequestM
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
+import org.springframework.security.oauth2.client.oidc.web.logout.OidcClientInitiatedLogoutSuccessHandler;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 
@@ -35,12 +38,17 @@ class SecurityConfiguration {
                 .tokenUri(backchannel + "/protocol/openid-connect/token")
                 .jwkSetUri(backchannel + "/protocol/openid-connect/certs")
                 .userInfoUri(backchannel + "/protocol/openid-connect/userinfo")
-                .userNameAttributeName("sub").clientName("DispatchWorks").build();
+                .providerConfigurationMetadata(Map.of(
+                        "end_session_endpoint", issuer + "/protocol/openid-connect/logout"))
+                .userNameAttributeName("sub").clientName("Erasure").build();
         return new InMemoryClientRegistrationRepository(registration);
     }
 
     @Bean
-    SecurityFilterChain security(HttpSecurity http) throws Exception {
+    SecurityFilterChain security(HttpSecurity http, ClientRegistrationRepository registrations,
+                                 @Value("${APP_BASE_URL}") String appBaseUrl) throws Exception {
+        var logoutHandler = new OidcClientInitiatedLogoutSuccessHandler(registrations);
+        logoutHandler.setPostLogoutRedirectUri(appBaseUrl + "/");
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/index.html", "/assets/**", "/error", "/api/csrf").permitAll()
@@ -50,7 +58,7 @@ class SecurityConfiguration {
                         PathPatternRequestMatcher.withDefaults().matcher("/api/**")))
                 .oauth2Login(login -> login.defaultSuccessUrl("/", true))
                 .csrf(Customizer.withDefaults())
-                .logout(logout -> logout.logoutSuccessHandler((request, response, auth) -> response.setStatus(204)))
+                .logout(logout -> logout.logoutSuccessHandler(logoutHandler))
                 .headers(headers -> headers.contentSecurityPolicy(csp -> csp.policyDirectives(
                         "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
                         + "connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'")))

@@ -27,7 +27,7 @@ class AccountController {
 
     @GetMapping("/api/csrf")
     CsrfResponse csrf(CsrfToken token) {
-        return new CsrfResponse(token.getHeaderName(), token.getToken());
+        return new CsrfResponse(token.getHeaderName(), token.getParameterName(), token.getToken());
     }
 
     @GetMapping("/api/session")
@@ -59,7 +59,7 @@ class AccountController {
         return new Employee(principal.getIssuer().toString(), principal.getSubject());
     }
 
-    record CsrfResponse(String headerName, String token) {}
+    record CsrfResponse(String headerName, String parameterName, String token) {}
     record Selection(String businessAccountRef) {}
     record SessionResponse(String employee, List<BusinessAccount> accounts, BusinessAccount selectedAccount) {}
 }

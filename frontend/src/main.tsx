@@ -13,10 +13,14 @@ async function getSession(): Promise<Session | null> {
   return response.json();
 }
 
-async function command(path: string, body?: unknown) {
+async function getCsrf(): Promise<{ headerName: string; parameterName: string; token: string }> {
   const csrfResponse = await fetch('/api/csrf', { cache: 'no-store' });
   if (!csrfResponse.ok) throw new Error('Could not confirm your session. Please sign in again.');
-  const csrf: { headerName: string; token: string } = await csrfResponse.json();
+  return csrfResponse.json();
+}
+
+async function command(path: string, body?: unknown) {
+  const csrf = await getCsrf();
   const response = await fetch(path, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', [csrf.headerName]: csrf.token },
@@ -79,10 +83,19 @@ function App() {
   async function logout() {
     setBusy(true);
     try {
-      await command('/logout');
-      setSession(null);
-      setMappings(null);
-      setError('');
+      const csrf = await getCsrf();
+      // Use browser navigation so the provider can clear its SSO cookie and return here.
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '/logout';
+      form.hidden = true;
+      const token = document.createElement('input');
+      token.type = 'hidden';
+      token.name = csrf.parameterName;
+      token.value = csrf.token;
+      form.appendChild(token);
+      document.body.appendChild(form);
+      form.submit();
     } catch (reason) {
       setError((reason as Error).message);
     } finally {
@@ -93,30 +106,23 @@ function App() {
   return <div className="shell">
     <aside className="sidebar">
       <a className="brand" href="/" aria-label="Erasure home"><span className="mark">e</span>erasure</a>
-      <p className="company">DISPATCHWORKS</p>
       <div className="nav-item"><span aria-hidden="true">▦</span> Business accounts</div>
-      <div className="sidebar-bottom"><span className="status-dot"/> Synthetic environment<p>Employee access foundation</p></div>
+      <div className="sidebar-bottom">Demo · synthetic data</div>
     </aside>
     <div className="main-shell">
-      <header className="topbar">
-        <span>Control plane <span className="divider">/</span> Business accounts</span>
-        {session && <div className="employee"><span>{session.employee}</span><button className="text-button" onClick={logout} disabled={busy}>Sign out</button></div>}
-      </header>
+      {session && <header className="topbar">
+        <div className="employee"><span>{session.employee}</span><button className="text-button" onClick={logout} disabled={busy}>Sign out</button></div>
+      </header>}
       <main>
         {error && <div className="error" role="alert">{error} <button className="text-button" onClick={() => window.location.reload()}>Refresh</button></div>}
         {loading ? <p role="status">Loading your workspace…</p> : !session ? <section className="login-panel">
-          <p className="eyebrow">EMPLOYEE WORKSPACE</p>
-          <h1>Start with the right<br/>business account.</h1>
-          <p className="intro">Sign in to see the accounts you are authorized to operate. Every account keeps its own data and source mappings.</p>
+          <h1>Sign in</h1>
           <a className="primary-button" href="/oauth2/authorization/keycloak">Sign in with employee account <span aria-hidden="true">↗</span></a>
-          <p className="fine-print">DispatchWorks demonstration · Synthetic data only</p>
         </section> : <>
-          <p className="eyebrow">ACCOUNT WORKSPACE</p>
           <h1>Your business accounts</h1>
-          <p className="intro">Choose the business account you want to work with.</p>
           <section className="selected-banner" aria-label="Current business account">
             <div><p className="eyebrow">SELECTED BUSINESS ACCOUNT</p><strong>{selected?.name ?? 'No account selected'}</strong></div>
-            {selected ? <code>{selected.reference}</code> : <span>Select an account below to continue</span>}
+            {selected && <code>{selected.reference}</code>}
           </section>
           <div className="section-heading"><h2>Authorized accounts</h2><span>{session.accounts.length} available</span></div>
           {session.accounts.length === 0 ? <div className="empty">You have no business account grants. Contact your platform administrator to request access.</div> :
@@ -129,8 +135,7 @@ function App() {
               <span className="account-action">{selected?.reference === account.reference ? 'Selected ✓' : 'Select →'}</span>
             </button>)}</div>}
           {selected && <section className="mapping-panel">
-            <div className="section-heading"><h2>Source account mappings</h2><span>{selected.name}</span></div>
-            <p className="helper">A local ID identifies an account only together with its source, realm and mapping version.</p>
+            <div className="section-heading"><h2>Source account mappings</h2></div>
             {mappings === null ? <p role="status">Loading account mappings…</p> :
               <div className="table-scroll"><table><caption>Mappings for {selected.name}</caption>
                 <thead><tr><th>Source</th><th>Realm</th><th>Local account ID</th><th>Version</th></tr></thead>
@@ -140,7 +145,6 @@ function App() {
           </section>}
         </>}
       </main>
-      <footer>Erasure <span>Account access follows your employee grants.</span></footer>
     </div>
   </div>;
 }

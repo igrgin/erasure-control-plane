@@ -1,6 +1,6 @@
 # Employee login and account access
 
-Issue #12 implements the REQ-01 / REQ-12 employee access foundation. The later proposal, approval, adapter, audit and public-demo workflows remain separate issues. The local environment uses synthetic DispatchWorks identities and the accepted `dispatchworks-v1` account mappings.
+Issue #12 implements the REQ-01 / REQ-12 employee access foundation. The later proposal, approval, adapter, audit and public-demo workflows remain separate issues. DispatchWorks is the fictional company operating Erasure in the demo. Northstar Supply and Harbor Analytics are its fictional business accounts. The local environment uses synthetic employee identities and the accepted `dispatchworks-v1` account mappings.
 
 ## Run locally
 
@@ -24,7 +24,9 @@ Employee identity uses the validated OIDC issuer and subject. Usernames are disp
 
 Northstar is `biz-northstar`, with support mapping `(realm=north, account=7, version=1)`. Harbor is `biz-harbor`, with `(realm=harbor, account=7, version=1)`. These are control-plane mapping records. No support source database or adapter is created by this slice.
 
-The UI keeps the account name and reference visible, lists only authorized accounts and displays the complete source-local mapping. Selecting an account writes only the account reference into the authenticated backend session. Every subsequent read checks current grants again. Removing a grant takes effect on the next protected request, and refreshing the session clears a revoked selection. Signing out invalidates the Erasure session. The local Keycloak SSO session remains active, so signing in again may reuse that identity. Use a separate browser profile to operate another employee.
+The UI keeps the account name and reference visible, lists only authorized accounts and displays the complete source-local mapping. Selecting an account writes only the account reference into the authenticated backend session. Every subsequent read checks current grants again. Removing a grant takes effect on the next protected request, and refreshing the session clears a revoked selection. Signing out invalidates the Erasure session and ends the current Keycloak browser SSO session. Signing in again prompts for credentials, so you can switch employees in the same browser. Logout uses a CSRF-protected form POST followed by OIDC RP-initiated logout, with the ID token hint and an explicitly registered return URL of `http://localhost:18112/`.
+
+Keycloak imports `realm.json` only when the realm does not already exist. When upgrading an existing local volume, set the Erasure client's Valid post logout redirect URIs to `http://localhost:18112/` through Keycloak administration. The client attribute is `post.logout.redirect.uris`. Preserve existing realm data; restarting with a changed import file does not update an existing client.
 
 ```sh
 docker compose -f deploy/local/compose.yaml logs -f application
@@ -74,7 +76,7 @@ The account runner builds/starts the real Compose environment, runs eight storag
 
 Storage checks connect as `erasure_runtime` over TCP with its actual credentials, never as an owner or `BYPASSRLS` role. They test missing and forged contexts, different issuers, overlapping IDs, explicit grants, pooled-connection context reset, denied grant expansion, authorized administrative mapping insertion, rejected cross-account writes and immutable composite mapping keys. Test writes roll back.
 
-Browser checks exercise actual Keycloak OIDC redirects, unauthorized HTTP reads and selection writes, CSRF rejection, consistent account display, switching between two granted accounts, session-cookie properties, logout, no-grant identities, live revocation and session recovery after an API restart. Playwright retains traces and screenshots in ignored `frontend/test-results` on failure.
+Browser checks exercise actual Keycloak OIDC redirects, unauthorized HTTP reads and selection writes, CSRF rejection, consistent account display, switching between two granted accounts, session-cookie properties, CSRF-protected SSO logout and same-browser employee switching, no-grant identities, live revocation and session recovery after an API restart. Playwright retains traces and screenshots in ignored `frontend/test-results` on failure.
 
 ## Module and storage boundaries
 

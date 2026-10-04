@@ -23,6 +23,30 @@ test('anonymous APIs and forged employee headers cannot bypass login', async ({ 
   expect((await select(request, 'biz-northstar')).status()).toBe(401);
 });
 
+test('sign out ends Keycloak SSO and lets another employee sign in in the same browser', async ({ page }) => {
+  await login(page, 'alice');
+  await page.getByRole('button', { name: /Northstar Supply/ }).click();
+  await expect(page.getByRole('cell', { name: 'north', exact: true })).toBeVisible();
+  expect((await page.request.post('/logout')).status()).toBe(403);
+  expect((await page.request.get('/api/session')).status()).toBe(200);
+
+  await page.getByRole('button', { name: 'Sign out' }).click();
+  await expect(page.getByRole('link', { name: /Sign in with employee/ })).toBeVisible();
+  expect((await page.request.get('/api/session')).status()).toBe(401);
+
+  // Reuse the same browser and cookies, without clearing storage or forcing reauthentication.
+  await page.getByRole('link', { name: /Sign in with employee/ }).click();
+  await expect(page.getByRole('textbox', { name: 'Username', exact: true })).toBeVisible();
+  await page.getByRole('textbox', { name: 'Username', exact: true }).fill('bob');
+  await page.getByLabel('Password', { exact: true }).fill('demo-bob');
+  await page.getByRole('button', { name: 'Sign In', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Your business accounts' })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Harbor Analytics/ })).toBeVisible();
+  const session = await (await page.request.get('/api/session')).json();
+  expect(session.employee).toBe('bob');
+  expect(session.selectedAccount).toBeNull();
+});
+
 test('Northstar employee cannot read or select Harbor, even with overlapping local IDs', async ({ page }) => {
   await login(page, 'alice');
   await expect(page.getByRole('button', { name: /Harbor Analytics/ })).toHaveCount(0);
