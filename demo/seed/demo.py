@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 """Local fixture administration, intentionally separate from production adapters."""
 import argparse
-import hashlib
 import json
-import os
 from pathlib import Path
 import re
 import secrets
@@ -42,11 +40,13 @@ def initialize():
         path = LOCAL / f'{source}_password'
         if not path.exists():
             path.write_text(secrets.token_hex(24)+'\n')
-            path.chmod(0o600)
+        # Compose file secrets are bind mounts on Linux; the container UID
+        # differs from the host owner. The containing directory stays 0700.
+        path.chmod(0o444)
     path = LOCAL/'search_curl'
     if not path.exists():
         path.write_text('user = "elastic:'+ (LOCAL/'search_password').read_text().strip()+'"\n')
-        path.chmod(0o600)
+    path.chmod(0o444)
     for source in ('fulfillment','support'):
         path = LOCAL / f'{source}_adapter_password'
         if not path.exists():
