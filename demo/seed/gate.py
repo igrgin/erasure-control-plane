@@ -37,21 +37,32 @@ class Gate:
 
     @contextmanager
     def lock(self, exclusive=False, timeout=30):
-        with (self.directory / 'workers.lock').open('a') as stream:
-            mode = fcntl.LOCK_EX if exclusive else fcntl.LOCK_SH
-            deadline = time.monotonic() + timeout
+        deadline = time.monotonic() + timeout
+
+        def acquire(stream, mode):
             while True:
                 try:
                     fcntl.flock(stream, mode | fcntl.LOCK_NB)
-                    break
+                    return
                 except BlockingIOError:
                     if time.monotonic() >= deadline:
                         raise TimeoutError('workers did not quiesce; no source reset performed')
                     time.sleep(.05)
+
+        with (self.directory / 'admission.lock').open('a') as admission:
+            acquire(admission, fcntl.LOCK_EX)
             try:
-                yield
+                with (self.directory / 'workers.lock').open('a') as workers:
+                    # Hold admission while draining. Existing workers need only their
+                    # worker lock to finish; late arrivals cannot extend the drain.
+                    acquire(workers, fcntl.LOCK_EX if exclusive else fcntl.LOCK_SH)
+                    fcntl.flock(admission, fcntl.LOCK_UN)
+                    try:
+                        yield
+                    finally:
+                        fcntl.flock(workers, fcntl.LOCK_UN)
             finally:
-                fcntl.flock(stream, fcntl.LOCK_UN)
+                fcntl.flock(admission, fcntl.LOCK_UN)
 
     @contextmanager
     def lease(self, generation):
