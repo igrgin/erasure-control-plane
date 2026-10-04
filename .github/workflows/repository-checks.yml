@@ -20,6 +20,9 @@ jobs:
       - run: python3 -m unittest discover -s demo/seed -p 'test_*.py'
       - name: Real source smoke with fresh volumes
         run: python3 demo/seed/demo.py smoke
+      - name: Source diagnostics on failure
+        if: failure()
+        run: docker compose -f deploy/demo-sources/compose.yaml --profile sources logs --no-color --tail 80
       - name: Stop synthetic sources
         if: always()
         run: docker compose -f deploy/demo-sources/compose.yaml --profile sources down
