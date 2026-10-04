@@ -1,0 +1,441 @@
+:root {
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:#213a35;
+  background:#f5f6f2;
+  font-synthesis:none;
+  font-weight:400;
+  line-height:1.5;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+}
+
+button,a {
+  -webkit-tap-highlight-color:transparent;
+}
+
+button {
+  font:inherit;
+  cursor:pointer;
+}
+
+button:disabled {
+  cursor:default;
+}
+
+a {
+  color:inherit;
+}
+
+button:focus-visible,a:focus-visible {
+  outline:3px solid #cf893c;
+  outline-offset:4px;
+}
+
+h1,h2,p {
+  margin:0;
+}
+
+h1 {
+  font-size:38px;
+  line-height:1.18;
+  letter-spacing:-1.5px;
+  font-weight:600;
+  margin:12px 0 18px;
+}
+
+h2 {
+  font-size:16px;
+  font-weight:600;
+}
+
+code {
+  font:13px ui-monospace,SFMono-Regular,Consolas,monospace;
+}
+
+.shell {
+  min-height:100vh;
+  display:flex;
+}
+
+.sidebar {
+  width:242px;
+  flex-shrink:0;
+  padding:35px 24px 25px;
+  background:#142e2b;
+  color:#edf1e8;
+  display:flex;
+  flex-direction:column;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:29px;
+  font-weight:550;
+  letter-spacing:-1px;
+  text-decoration:none;
+}
+
+.mark {
+  background:#c5d69a;
+  color:#19342e;
+  display:grid;
+  place-items:center;
+  width:33px;
+  height:33px;
+  border-radius:9px;
+  font-size:30px;
+  line-height:1;
+  font-family:Georgia,serif;
+}
+
+.nav-item {
+  margin-top:60px;
+  padding:13px 12px;
+  background:#29453e;
+  border:1px solid #3b554c;
+  border-radius:7px;
+  font-size:13px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.nav-item span {
+  font-size:21px;
+  color:#bfd08f;
+}
+
+.sidebar-bottom {
+  margin-top:auto;
+  font-size:11px;
+  color:#c1cfc4;
+  padding-top:70px;
+}
+
+.main-shell {
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.topbar {
+  height:79px;
+  border-bottom:1px solid #dde3d9;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:0 45px;
+  font-size:12px;
+  color:#6b7d73;
+}
+
+.employee {
+  display:flex;
+  align-items:center;
+  gap:24px;
+  color:#31483d;
+}
+
+.text-button {
+  border:0;
+  background:none;
+  text-decoration:underline;
+  font-size:12px;
+  padding:5px;
+  color:inherit;
+}
+
+main {
+  max-width:1130px;
+  width:100%;
+  margin:0 auto;
+  padding:52px 52px 90px;
+  flex:1;
+}
+
+.eyebrow {
+  font-size:10px;
+  letter-spacing:1.65px;
+  color:#758771;
+  font-weight:600;
+}
+
+.selected-banner {
+  margin:35px 0 36px;
+  padding:22px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  border:1px solid #c8d5b8;
+  border-radius:8px;
+  background:#edf1e5;
+}
+
+.selected-banner .eyebrow {
+  font-size:9px;
+  margin-bottom:5px;
+}
+
+.selected-banner strong {
+  font-size:20px;
+  font-weight:550;
+}
+
+.selected-banner>code {
+  font-size:12px;
+  color:#536349;
+}
+
+.section-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:0 0 16px;
+  gap:14px;
+}
+
+.section-heading>span {
+  font-size:11px;
+  color:#7a8777;
+}
+
+.accounts {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+
+.account-card {
+  display:flex;
+  text-align:left;
+  align-items:center;
+  gap:14px;
+  padding:22px 18px;
+  background:#fff;
+  border:1px solid #dfe5db;
+  border-radius:8px;
+  color:#253e33;
+  min-height:95px;
+  transition:border-color .15s;
+}
+
+.account-card:hover {
+  border-color:#7a9465;
+}
+
+.account-card.active {
+  border-color:#6e8856;
+  box-shadow:0 0 0 1px #6e8856;
+}
+
+.account-symbol {
+  height:39px;
+  width:39px;
+  flex-shrink:0;
+  border:1px solid #dde4d5;
+  background:#f3f5ed;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  font-family:Georgia,serif;
+  font-size:22px;
+  color:#667c55;
+}
+
+.account-label {
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+.account-label strong {
+  font-size:13px;
+  font-weight:600;
+}
+
+.account-label code {
+  font-size:10px;
+  color:#7b8878;
+}
+
+.account-action {
+  margin-left:auto;
+  font-size:10px;
+  white-space:nowrap;
+  color:#677d54;
+}
+
+.mapping-panel {
+  margin-top:44px;
+}
+
+.table-scroll {
+  overflow-x:auto;
+  background:#fff;
+  border:1px solid #dfe5db;
+  border-radius:8px;
+}
+
+table {
+  border-collapse:collapse;
+  width:100%;
+  text-align:left;
+  font-size:13px;
+}
+
+caption {
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip-path:inset(50%);
+}
+
+th {
+  font-size:10px;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  font-weight:500;
+  color:#7e8d78;
+  background:#f0f3eb;
+}
+
+td,th {
+  padding:16px 21px;
+  border-bottom:1px solid #e7eadf;
+}
+
+tr:last-child td {
+  border-bottom:none;
+}
+
+.login-panel {
+  padding-top:70px;
+  max-width:630px;
+}
+
+.login-panel h1 {
+  font-size:47px;
+  margin-bottom:25px;
+}
+
+.primary-button {
+  display:inline-flex;
+  align-items:center;
+  gap:35px;
+  margin-top:33px;
+  background:#234a3e;
+  border-radius:6px;
+  color:#fff;
+  padding:16px 22px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.primary-button:hover {
+  background:#32634f;
+}
+
+.error {
+  padding:14px 20px;
+  background:#fff2e5;
+  border:1px solid #dbb78e;
+  border-radius:6px;
+  font-size:13px;
+  margin-bottom:25px;
+  color:#72451f;
+}
+
+.empty {
+  padding:25px;
+  background:#fff;
+  border:1px solid #dfe5db;
+  border-radius:8px;
+  color:#6b7c63;
+  font-size:14px;
+}
+
+@media(max-width:1050px) {
+  .accounts {
+    grid-template-columns:1fr;
+  }
+  .sidebar {
+    width:205px;
+  }
+  main {
+    padding:35px;
+  }
+  .topbar {
+    padding:0 35px;
+  }
+}
+
+@media(max-width:720px) {
+  .shell {
+    display:block;
+  }
+  .sidebar {
+    width:100%;
+    padding:18px 22px;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand {
+    font-size:23px;
+  }
+  .sidebar-bottom {
+    margin-top:0;
+    padding-top:0;
+  }
+  .nav-item {
+    display:none;
+  }
+  .topbar {
+    height:62px;
+    padding:0 22px;
+    font-size:10px;
+  }
+  .employee {
+    gap:10px;
+  }
+  main {
+    padding:30px 22px 60px;
+  }
+  h1 {
+    font-size:30px;
+  }
+  .login-panel {
+    padding-top:30px;
+  }
+  .login-panel h1 {
+    font-size:36px;
+  }
+  .selected-banner {
+    padding:18px;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .selected-banner strong {
+    font-size:18px;
+  }
+  .section-heading {
+    align-items:flex-start;
+  }
+  .account-card {
+    padding:20px 15px;
+  }
+  .primary-button {
+    gap:18px;
+  }
+}

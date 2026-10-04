@@ -2,7 +2,7 @@
 
 Erasure is an internal control plane for deleting or anonymizing business-account data across registered sources. One company operates a shared installation, with each customer business account treated as a tenant. Source owners approve cleanup operations before adapters execute them. Erasure records the adapters' reported results but does not independently verify deletion.
 
-## Planned stack
+## Stack
 
 - Control plane: Java, Spring Boot, PostgreSQL.
 - UI: React, TypeScript.
@@ -19,7 +19,13 @@ Erasure is an internal control plane for deleting or anonymizing business-accoun
 
 ## Setup
 
-TODO
+Run the employee login and account-selection foundation:
+
+```sh
+docker compose -f deploy/local/compose.yaml up -d --build --wait --wait-timeout 180
+```
+
+Open <http://localhost:18112>. Sign in as `alice` with `demo-alice` for Northstar, or `bob` with `demo-bob` to switch between both synthetic accounts. See [local development](docs/local-development.md) for pinned versions, the complete employee list and real-PostgreSQL/browser acceptance checks. The cleanup workflow remains under development.
 
 ## Documentation
 

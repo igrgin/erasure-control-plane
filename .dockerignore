@@ -1,0 +1,8 @@
+.git
+.pathfinder
+**/node_modules
+**/target
+**/dist
+**/test-results
+**/playwright-report
+.env*
