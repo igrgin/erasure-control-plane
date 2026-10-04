@@ -36,6 +36,7 @@ def compose(*args, data=None, check=True):
 
 def initialize():
     LOCAL.mkdir(mode=0o700, parents=True, exist_ok=True)
+    LOCAL.chmod(0o700)
     for source in SERVICES:
         path = LOCAL / f'{source}_password'
         if not path.exists():
