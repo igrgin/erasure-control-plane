@@ -36,11 +36,3 @@ gh api --paginate repos/igrgin/erasure-control-plane/issues/NUMBER/sub_issues
 ```
 
 A parent endpoint 404 can mean there is no parent; confirm the issue itself is accessible. Other lookup failures leave readiness unverified. Read the parent epic's entry gates when present. For each blocker, require `state: closed` and `state_reason: completed`. For epic integration, apply that same criterion to every child. Record the readiness conclusion and any acceptance evidence before implementation.
-
-## Main ruleset
-
-The active `main` branch ruleset requires pull requests, resolved review threads, and linear history, and blocks force pushes and deletion. It has no bypass actors, so administrators also follow it. There are no required workflow statuses. Inspect the live settings with `gh ruleset list` and `gh ruleset view ID`; GitHub is the source of truth for enforcement.
-
-With no required status checks, GitHub does not enforce an up-to-date branch through a strict status-check setting. Updating the branch before merging remains a workflow requirement.
-
-GitHub's required approving-review count is zero because the solo owner cannot approve a PR authored through their own account. Owner review and explicit merge authorization remain required by AGENTS.md.
