@@ -1,4 +1,4 @@
-"""Safety checks for issue/branch/dependency merge policy."""
+"""Checks for the local issue-readiness and branch helpers."""
 import unittest
 from unittest.mock import patch
 import github_policy as policy
@@ -41,22 +41,6 @@ class PolicyTests(unittest.TestCase):
         api.return_value = actual
         with self.assertRaisesRegex(ValueError, 'exactly one'):
             policy.readiness(48)
-
-    @patch.object(policy, 'readiness', return_value=issue())
-    def test_missing_or_foreign_issue_reference_denied(self, readiness):
-        for body in ['No issue', 'Closes https://github.com/another/repo/issues/48']:
-            with self.assertRaisesRegex(ValueError, 'close exactly one'):
-                policy.check_pr({'body': body})
-
-    @patch.object(policy, 'readiness', return_value=issue())
-    def test_wrong_branch_denied(self, readiness):
-        with self.assertRaisesRegex(ValueError, 'issue branch'):
-            policy.check_pr({'body': 'Closes #48', 'head': {'ref': 'feature/demo'}, 'base': {'ref': 'main'}})
-
-    @patch.object(policy, 'readiness', return_value=issue())
-    def test_valid_pr_is_accepted(self, readiness):
-        result = policy.check_pr({'body': 'Closes #48', 'head': {'ref': '48-define-the-demo-blueprint'}, 'base': {'ref': 'main'}})
-        self.assertIn('valid', result)
 
     @patch.object(policy, 'api_pages')
     @patch.object(policy, 'api')

@@ -2,11 +2,12 @@
 
 ## Start work
 
-1. Read the GitHub issue, its parent epic, and acceptance criteria.
+1. Read the GitHub issue, its parent epic, and acceptance criteria. Confirm acceptance evidence for any entry gate before implementation.
 2. Run `python3 scripts/issue_workflow.py check NUMBER`. All native blockers must be closed as completed. Epic integration also requires completed children.
 3. When the issue is assigned to you or you take it for implementation, run `python3 scripts/issue_workflow.py branch NUMBER` from a clean working tree. The helper checks prerequisites, fetches main, and creates or updates the issue branch without discarding commits.
 4. Implement the issue and run its acceptance checks.
-5. Open a PR targeting main with `Closes #NUMBER` and wait for the project owner's review. Only the owner approves PRs. Agents must never submit approving reviews, including through the owner's GitHub account. Merge only after the owner approves the result, explicitly instructs you to merge, and required checks pass.
+5. Open a PR targeting main with `Closes #NUMBER`. Verify that it closes exactly one open same-repository issue, uses its canonical branch, and implements that issue. Record acceptance-check results in the PR and leave it open for owner review.
+6. Before merging, recheck live readiness, update the branch to include current main, and confirm all configured GitHub requirements pass. Apply the owner approval and explicit merge authorization gate in [AGENTS.md](../AGENTS.md).
 
 The helpers require Git, Python 3, and authenticated GitHub CLI access. GitHub issues and native sub-issue/blocking relationships are the backlog source of truth.
 
@@ -20,14 +21,16 @@ The helpers require Git, Python 3, and authenticated GitHub CLI access. GitHub i
 - Refresh existing issue branches before implementation and preserve existing commits.
 - Merged issue branches are deleted automatically.
 
-## Dependencies and checks
+## Issue readiness
 
 Use exactly one issue type: `bug`, `spike`, `implement`, or `epic`. Parent/sub-issue relationships group work; native blocked-by links define prerequisites. Close prerequisites as completed only after their acceptance criteria pass. A `not_planned` closure does not unblock work.
 
-The `issue-policy` status checks the PR's closing issue, canonical branch, type, open state, native blockers, and completed epic children. It runs trusted default-branch code after `Repository checks`, on issue events, and on scheduled/manual refresh. `Repository checks` runs policy tests with read permissions.
+Issue references, branch names, prerequisites, and acceptance evidence are agent and owner review responsibilities. The local helper checks live prerequisites before work starts; these rules do not run as GitHub Actions. Epic membership groups work and does not sequence unrelated children.
 
-## Main protection
+## Main ruleset
 
-Main requires PRs for administrators too, successful `Repository checks` and `issue-policy` statuses, an up-to-date branch, resolved review threads, and linear history. Force pushes and deletion are disabled.
+The active `main` branch ruleset requires pull requests, resolved review threads, and linear history, and blocks force pushes and deletion. It has no bypass actors, so administrators also follow it. There are no required workflow statuses. Inspect the live settings with `gh ruleset list` and `gh ruleset view ID`; GitHub is the source of truth for enforcement.
 
-GitHub's required approving-review count is zero because the solo owner cannot approve a PR authored through their own account. The owner reviews and approves the result directly. This setting does not authorize agents to approve or merge PRs on their own.
+With no required status checks, GitHub does not enforce an up-to-date branch through a strict status-check setting. Updating the branch before merging remains a workflow requirement.
+
+GitHub's required approving-review count is zero because the solo owner cannot approve a PR authored through their own account. Owner review and explicit merge authorization remain required by AGENTS.md.

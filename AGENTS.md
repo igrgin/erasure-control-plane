@@ -1,17 +1,10 @@
 # Repository instructions
 
-## Work selection
+## Issue and Git workflow
 
-Before starting an issue, read [the Git workflow](docs/git-workflow.md) and run its live readiness check. Begin implementation only when every issue prerequisite and epic entry gate is accepted. Epic membership groups work; it does not require unrelated children to run sequentially.
+Before taking an issue, creating or updating its branch, opening a PR, or merging, follow [the Git workflow](docs/git-workflow.md). It defines live readiness checks, branch conventions, PR requirements, and owner approval. Begin implementation only after the readiness check passes and any issue or epic entry criteria have acceptance evidence.
 
-## Git rules
-
-- Create an issue branch only when the issue is assigned or taken for implementation and its prerequisites are accepted. Creating an issue does not create a branch.
-- Use one dedicated branch per issue, including epic integration work. Name it `<github-issue-number>-<issue-title-in-kebab-case>`, stripping any `[ERA-xxx]` or `[EPIC-xx]` title prefix. Example: `48-define-the-demo-source-catalog-business-story-and-scenario-blueprint`.
-- Use a flat branch name. Add a namespace only when the user explicitly requests one.
-- Start from the latest `origin/main` unless the user explicitly selects another base. Reuse an existing issue branch without discarding its commits; update its base before new work.
-- Submit changes through a PR targeting `main`, with `Closes #<issue-number>` in its body. Each PR implements its branch's issue and passes the required checks before merge.
-- Only the project owner approves PRs. Agents must never submit approving reviews, including through the owner's GitHub account. Open the PR and wait for the owner's review. Merge only after the owner approves the result and explicitly instructs you to merge.
+Only the project owner approves PRs. Agents must never submit approving reviews, including through the owner's GitHub account. Leave the PR open for owner review; merge only after owner approval and an explicit instruction to merge.
 
 ## Design and verification
 

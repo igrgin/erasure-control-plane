@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Check live issue readiness and publish PR policy statuses using trusted code."""
-import argparse
+"""Read live issue prerequisites and derive the dedicated issue branch name."""
 import json
 import os
-from pathlib import Path
 import re
 import subprocess
 import unicodedata
@@ -64,51 +62,3 @@ def readiness(number, for_integration=True):
         if pending:
             raise ValueError(f"Epic #{number} integration awaits children: {', '.join(pending)}")
     return issue
-
-
-def check_pr(pr):
-    repo = repo_name()
-    refs = re.findall(r'\b(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?)\s+(?:#|https://github\.com/'
-                      + re.escape(repo) + r'/issues/)(\d+)\b', pr.get('body') or '', re.I)
-    refs = {int(ref) for ref in refs}
-    if len(refs) != 1:
-        raise ValueError('PR must close exactly one same-repository issue, e.g. Closes #48')
-    number = next(iter(refs))
-    issue = readiness(number)
-    expected = branch_name(number, issue['title'])
-    if pr['head']['ref'] != expected:
-        raise ValueError(f'Use the issue branch: {expected}')
-    if pr['base']['ref'] != 'main':
-        raise ValueError('Default PR base is main; explicit exceptions require a policy revision')
-    return f'Issue #{number}, branch, type, and prerequisites are valid'
-
-
-def refresh(pr_number=None):
-    repo = repo_name()
-    prs = [api(f'repos/{repo}/pulls/{pr_number}')] if pr_number else api_pages(f'repos/{repo}/pulls?state=open&per_page=100')
-    failed = False
-    for pr in prs:
-        if pr['state'] != 'open':
-            continue
-        try:
-            detail = check_pr(pr)
-            state = 'success'
-        except (ValueError, subprocess.CalledProcessError, KeyError) as error:
-            detail = str(error)
-            state = 'failure'
-            failed = True
-        api(f"repos/{repo}/statuses/{pr['head']['sha']}", {
-            'state': state, 'context': 'issue-policy', 'description': detail[:140],
-            'target_url': pr['html_url']})
-        print(f"PR #{pr['number']}: {state}: {detail}", flush=True)
-    return not failed
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--pr', type=int)
-    args = parser.parse_args()
-    event_path = os.environ.get('GITHUB_EVENT_PATH')
-    event = json.loads(Path(event_path).read_text()) if event_path else {}
-    pr_number = args.pr or (event.get('pull_request') or {}).get('number')
-    raise SystemExit(0 if refresh(pr_number) else 1)
