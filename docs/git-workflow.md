@@ -5,7 +5,7 @@
 1. Read the GitHub issue, its parent epic, and acceptance criteria. Confirm acceptance evidence for any entry gate before implementation.
 2. When receiving a new issue, check live GitHub data with `gh`. Take it only when it is open, has no assignees, and has no native blocked-by relationships. Confirm its supported type and any epic entry gates as described below.
 3. Assign the eligible issue to the logged-in GitHub account with `gh issue edit NUMBER --repo igrgin/erasure-control-plane --add-assignee @me`. Re-read the issue to confirm the assignment before starting implementation.
-4. After assignment, use Git from a clean working tree to fetch origin and create or update the dedicated issue branch under the branch rules below. Preserve existing commits.
+4. After assignment, start from a clean working tree and run `git fetch origin`. Create a new issue branch with `git switch -c ISSUE-BRANCH origin/main`, using the branch name defined below. For an existing issue branch, preserve its commits and update it to include the latest `origin/main` before implementation.
 5. Implement the issue and run its acceptance checks.
 6. Open a PR targeting main with `Closes #NUMBER`. Verify that it closes exactly one open same-repository issue, uses its canonical branch, and implements that issue. Record acceptance-check results in the PR and leave it open for owner review.
 7. Before merging, recheck that the issue is open, assigned to the logged-in account, and has no blockers. Update the branch to include current main and confirm all configured GitHub requirements pass. Apply the owner approval and explicit merge authorization gate in [AGENTS.md](../AGENTS.md).
@@ -18,7 +18,7 @@ Use Git and authenticated GitHub CLI access. GitHub issues and native sub-issue/
 - One branch per issue, including epic integration work.
 - Name: `<github-issue-number>-<issue-title-in-kebab-case>`. Strip `[ERA-xxx]` or `[EPIC-xx]` title prefixes.
 - Use flat names. Namespaces require an explicit user instruction.
-- Base: latest `origin/main`, unless the user specifies otherwise.
+- Create every new issue branch from the latest `origin/main` after fetching origin. Use another base only when the user explicitly selects it.
 - Refresh existing issue branches before implementation and preserve existing commits.
 - Merged issue branches are deleted automatically.
 
