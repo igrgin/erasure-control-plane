@@ -44,9 +44,11 @@ services:
       xpack.ml.enabled: 'false'
       node.store.allow_mmap: 'false'
       ES_JAVA_OPTS: -Xms512m -Xmx512m
-      ELASTIC_PASSWORD_FILE: /run/secrets/search_password
     secrets: [search_password, search_curl]
-    volumes: [search-data:/usr/share/elasticsearch/data]
+    command: [bash, /demo/search-entrypoint.sh]
+    volumes:
+      - search-data:/usr/share/elasticsearch/data
+      - ../../demo/sources/search-entrypoint.sh:/demo/search-entrypoint.sh:ro
     healthcheck:
       test: [CMD-SHELL, 'curl -fsS --config /run/secrets/search_curl "http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=1s" >/dev/null']
       interval: 3s
