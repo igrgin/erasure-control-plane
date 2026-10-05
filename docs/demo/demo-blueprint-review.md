@@ -6,11 +6,11 @@ Review unit: DispatchWorks v1 catalog, two logical SQL schemas, Elasticsearch ma
 
 | Issue criterion | Candidate evidence | Gate |
 | --- | --- | --- |
-| Required source catalog revised to PostgreSQL/Elasticsearch | [Catalog](../demo/catalog/README.md) identifies fulfillment, support and delivery-search with separate credentials/owners | Owner/source-owner review pending |
+| Required source catalog revised to PostgreSQL/Elasticsearch | [Catalog](../../demo/catalog/README.md) identifies fulfillment, support and delivery-search with separate credentials/owners | Owner/source-owner review pending |
 | Two accounts, mappings, roles, inventory, precision, retention and whole-account categories | Catalog fixes overlapping local IDs, UTC clock, 90/60/30-day horizons and separate metadata approval | Defined; real source tests follow in #49 |
-| Ownership beyond direct account lookup | [Fulfillment schema](../demo/catalog/fulfillment.sql) and catalog define dated assignments, shipment/parcel/scan dependencies, invoice holds and exact selection oracle | Defined; real join/locking tests follow in #50 |
-| Simple deletion cases | [Support schema](../demo/catalog/support.sql) and [search mapping](../demo/catalog/delivery-search.json) define simpler ownership | Defined; real adapter conformance follows in foundation and ERA-011 |
-| Scenarios with expected results | [Scenario blueprint](../demo/scenarios/README.md) specifies healthy/held, mismatch, isolation, lost responses, retention/recreation, unknown effects, audit and reset | Defined; execution follows in #51 |
+| Ownership beyond direct account lookup | [Fulfillment schema](../../demo/catalog/fulfillment.sql) and catalog define dated assignments, shipment/parcel/scan dependencies, invoice holds and exact selection oracle | Defined; real join/locking tests follow in #50 |
+| Simple deletion cases | [Support schema](../../demo/catalog/support.sql) and [search mapping](../../demo/catalog/delivery-search.json) define simpler ownership | Defined; real adapter conformance follows in foundation and ERA-011 |
+| Scenarios with expected results | [Scenario blueprint](../../demo/scenarios/README.md) specifies healthy/held, mismatch, isolation, lost responses, retention/recreation, unknown effects, audit and reset | Defined; execution follows in #51 |
 | Initial visibility model | Read-only public tour and owner-controlled live employee sessions | Defined; public URL/UAT follows in #53 |
 | Exact schemas/conventions/clock revision accepted | PR commit containing the blueprint and `dispatchworks-v1` is the acceptance unit | Pending explicit owner acceptance; do not unblock #12/#49 yet |
 
