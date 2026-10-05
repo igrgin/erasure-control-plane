@@ -10,6 +10,4 @@ Only the project owner approves PRs. Agents must never submit approving reviews,
 
 Read [the domain glossary](CONTEXT.md) and [requirements](docs/specification.md) when changing behavior. Read [the architecture](docs/architecture.md) when changing a module boundary, persistence model, or adapter contract. Read [the demo plan](docs/demo-plan.md) when changing fixtures, source setup, resets, or public demonstration behavior.
 
-Implement and run the issue's listed acceptance checks.
-
 Before concurrent edits, participating agents must agree on file ownership and changes to shared contracts or migrations. Accept an epic only after all its children and its combined real integration demonstration pass. Keep source-owner approval, tenant isolation, durable operation identity, and adapter-reported outcome limits intact.

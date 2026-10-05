@@ -2,24 +2,37 @@
 
 ## Work sequence
 
-1. Read the issue, any parent epic, and their acceptance criteria on GitHub. Confirm readiness and assignment under the rules below.
-2. From a clean working tree, fetch the latest remote state and create the issue branch from the latest `origin/main`. If it already exists locally or on origin, reuse it and rebase onto the latest `origin/main`, preserving its commits. Use another base only when the user explicitly selects it.
-3. Implement the issue and run its acceptance checks.
-4. Open a PR targeting `main` with `Closes #NUMBER`, closing exactly that issue from its dedicated branch. Record acceptance-check results in the PR and leave it open for owner review.
-5. Before merging, recheck readiness and assignment, fetch origin, and rebase onto current `origin/main` if needed. Rerun checks affected by the rebase and confirm GitHub requirements pass. Follow the owner approval and explicit merge authorization gate in [AGENTS.md](../AGENTS.md).
+1. Inspect the issue, any parent epic, and their acceptance criteria on GitHub. Record the readiness conclusion and entry-gate evidence.
+2. Take or resume the issue.
+3. Fetch the latest remote state and prepare the issue branch.
+4. Implement the issue and run its acceptance checks.
+5. Open the PR with acceptance-check results and submit it for owner review.
+6. Address review feedback, refresh the branch, and rerun affected checks. Recheck issue readiness, assignment, and GitHub merge requirements.
+7. Await the owner's review decision and merge instruction, then merge the PR.
 
-## Issue assignment
+## Issue readiness and assignment
 
-When handed an unassigned issue, confirm it is ready, assign it to the logged-in GitHub account, verify the assignment, and start work. Resume a ready issue already assigned to that account. Leave issues assigned to another account for their assignee.
+GitHub issues and native relationships are the backlog source of truth. Work can start or resume when:
 
-## Branch naming
+- The issue is open and has exactly one type label among `bug`, `spike`, `implement`, and `epic`.
+- Every blocking prerequisite is closed as `completed`. A `not_planned` closure does not satisfy a prerequisite.
+- Any issue or parent-epic entry gate has acceptance evidence.
+- For epic integration, every child is closed as `completed`. Epic membership does not sequence unrelated children.
 
-- One branch per issue, including epic integration work.
+Take an unassigned eligible issue by assigning it to the logged-in GitHub account and verifying the assignment. Resume an eligible issue already assigned to that account. Issues assigned to another account remain with their assignee.
+
+Readiness and assignment must remain valid through merge. Verify them against live GitHub data; lookup failures leave readiness unverified. A standalone issue may have no parent. Close issues as `completed` only after their acceptance criteria pass.
+
+## Branch rules
+
+- One branch per issue, including epic integration work. Create it only after assignment.
 - Name it `<github-issue-number>-<issue-title-in-kebab-case>`, stripping `[ERA-xxx]` or `[EPIC-xx]` prefixes. Keep its original name if the issue title later changes.
 - Use a flat name unless the user explicitly requests a namespace.
+- Begin branch work from a clean working tree. Create new branches from the latest `origin/main`; reuse existing local or remote issue branches and rebase onto the latest `origin/main`, preserving their commits. Use another base only when the user explicitly selects it.
+- Before merge, the branch must include current `origin/main`, with affected checks rerun after rebasing.
 
-## Readiness
+## PR rules
 
-GitHub issues and native relationships are the backlog source of truth. An issue is ready when it is open, has exactly one type label among `bug`, `spike`, `implement`, and `epic`, and every blocking prerequisite is closed as `completed`. Close issues as `completed` only after their acceptance criteria pass. A `not_planned` closure does not satisfy a prerequisite. Confirm acceptance evidence for any issue or parent-epic entry gate before implementation. Epic membership does not sequence unrelated children; epic integration requires every child to be closed as `completed`.
+Each PR targets `main`, implements its dedicated branch's issue, and closes exactly that issue with a closing reference in its body. Record the issue's acceptance-check results in the PR. All configured GitHub merge requirements must pass.
 
-Verify prerequisite and epic-child completion against live GitHub data. A parent lookup reporting no parent is expected for a standalone issue; other lookup failures leave readiness unverified. Record the readiness conclusion and entry-gate evidence before implementation.
+Owner review and merge authorization are governed by [AGENTS.md](../AGENTS.md).
