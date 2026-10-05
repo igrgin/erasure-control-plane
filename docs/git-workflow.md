@@ -2,11 +2,15 @@
 
 ## Work sequence
 
-1. Read the issue, any parent epic, and their acceptance criteria on GitHub. Confirm readiness under the rules below. For a new issue, require no assignees, assign it to the logged-in GitHub account, and verify the assignment. Resume an issue already assigned to that account; leave issues assigned to another account for their assignee.
+1. Read the issue, any parent epic, and their acceptance criteria on GitHub. Confirm readiness and assignment under the rules below.
 2. From a clean working tree, fetch the latest remote state and create the issue branch from the latest `origin/main`. If it already exists locally or on origin, reuse it and rebase onto the latest `origin/main`, preserving its commits. Use another base only when the user explicitly selects it.
 3. Implement the issue and run its acceptance checks.
 4. Open a PR targeting `main` with `Closes #NUMBER`, closing exactly that issue from its dedicated branch. Record acceptance-check results in the PR and leave it open for owner review.
 5. Before merging, recheck readiness and assignment, fetch origin, and rebase onto current `origin/main` if needed. Rerun checks affected by the rebase and confirm GitHub requirements pass. Follow the owner approval and explicit merge authorization gate in [AGENTS.md](../AGENTS.md).
+
+## Issue assignment
+
+When handed an unassigned issue, confirm it is ready, assign it to the logged-in GitHub account, verify the assignment, and start work. Resume a ready issue already assigned to that account. Leave issues assigned to another account for their assignee.
 
 ## Branch naming
 
