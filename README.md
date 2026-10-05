@@ -23,11 +23,25 @@ TODO
 
 ## Documentation
 
-- [Architecture and adapter contract](docs/architecture.md): modules, isolation, protocol, recovery.
-- [Demo](docs/demo-plan.md): synthetic fixtures, scenarios, resets, hosting.
-- [Deployment](docs/deployment.md): topology, identity, backups, release checks.
-- [Scaling](docs/scaling.md): workload targets, capacity, multiple API/worker instances.
-- [Specification](docs/specification.md): requirements and acceptance criteria.
-- [Domain model](CONTEXT.md): terminology and entity boundaries.
+### Agent guidance
+
+- [Git workflow](docs/agent/git-workflow.md): how agents take issues, manage branches, and deliver PRs.
+- [Repository instructions](AGENTS.md): when agents consult project documents and coordinate edits.
 - [GitHub issues](https://github.com/igrgin/erasure-control-plane/issues): implementation backlog.
-- [Git workflow](docs/git-workflow.md): branches, prerequisites, PR checks.
+
+### Product and system design
+
+- [Specification](docs/product/specification.md): requirements and acceptance criteria.
+- [Architecture and adapter contract](docs/product/architecture.md): modules, isolation, protocol, recovery.
+- [Scaling](docs/product/scaling.md): workload targets, capacity, multiple API/worker instances.
+- [Domain model](CONTEXT.md): terminology and entity boundaries.
+
+### Demonstration
+
+- [Demo plan](docs/demo/demo-plan.md): synthetic fixtures, scenarios, resets, hosting.
+- [Blueprint review](docs/demo/demo-blueprint-review.md): issue #48 acceptance coverage and review limits.
+
+### Operations
+
+- [Deployment](docs/operations/deployment.md): topology, identity, backups, release checks.
+- [Incident template](docs/operations/incident-template.md): incident scope, recovery decisions, and evidence.

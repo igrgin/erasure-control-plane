@@ -43,6 +43,6 @@ A runbook identifies the project owner as deployment/incident owner, gives pause
 
 ## Public demo coordination
 
-EPIC-10 owns the [demo blueprint and hosting assessment](demo-plan.md). Initial packaging can use the baseline source; final deployed UAT includes all three required stores/adapters and ERA-040 guided scenarios. ERA-041 compares hosts and estimated recurring costs, then ERA-042 checks the measured full-stack envelope and owner-approved budget before publishing a URL through this deployment machinery.
+EPIC-10 owns the [demo blueprint and hosting assessment](../demo/demo-plan.md). Initial packaging can use the baseline source; final deployed UAT includes all three required stores/adapters and ERA-040 guided scenarios. ERA-041 compares hosts and estimated recurring costs, then ERA-042 checks the measured full-stack envelope and owner-approved budget before publishing a URL through this deployment machinery.
 
 The default public experience is a synthetic read-only tour plus owner-controlled live employee-role sessions. Source/configuration/reset administration remains private. Reset quiesces dispatch and rotates the demo run generation so old commands cannot affect freshly seeded data. The demo has its own maintenance/teardown owner and preserves recordings when temporarily offline. No live demo is claimed complete without external browser evidence.
