@@ -1,17 +1,18 @@
 # Repository instructions
 
+## Shared workflow
+
+Use the shared skills in `.agents/skills/`, linked to
+`~/Documents/home-repo/.agents/skills/`. For implementation, diagnosis, review,
+coordination, and skill setup, read `~/Documents/home-repo/docs/agent-workflow.md`.
+For GitHub work, use `~/Documents/home-repo/docs/github-workflow.md` as the
+authority. The project owner reviews and authorizes merges.
+
 ## Work selection
 
-Before starting an issue, read [the Git workflow](docs/git-workflow.md) and run its live readiness check. Begin implementation only when every issue prerequisite and epic entry gate is accepted. Epic membership groups work; it does not require unrelated children to run sequentially.
-
-## Git rules
-
-- Create an issue branch only when the issue is assigned or taken for implementation and its prerequisites are accepted. Creating an issue does not create a branch.
-- Use one dedicated branch per issue, including epic integration work. Name it `<github-issue-number>-<issue-title-in-kebab-case>`, stripping any `[ERA-xxx]` or `[EPIC-xx]` title prefix. Example: `48-define-the-demo-source-catalog-business-story-and-scenario-blueprint`.
-- Use a flat branch name. Add a namespace only when the user explicitly requests one.
-- Start from the latest `origin/main` unless the user explicitly selects another base. Reuse an existing issue branch without discarding its commits; update its base before new work.
-- Submit changes through a PR targeting `main`, with `Closes #<issue-number>` in its body. Each PR implements its branch's issue and passes the required checks before merge.
-- Only the project owner approves PRs. Agents must never submit approving reviews, including through the owner's GitHub account. Open the PR and wait for the owner's review. Merge only after the owner approves the result and explicitly instructs you to merge.
+Before starting an issue, run `python3 scripts/issue_workflow.py check NUMBER`.
+Begin implementation when every issue prerequisite and epic entry gate is
+accepted. Unrelated children within an epic may run independently.
 
 ## Design and verification
 
